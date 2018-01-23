@@ -1,5 +1,5 @@
 {
-  "name": "@process-engine/errors",
+  "name": "@essential-projects/errors",
   "version": "0.1.0",
   "description": "Technical errors that the protocol-adapters can handle",
   "main": "dist/commonjs/index.js",
