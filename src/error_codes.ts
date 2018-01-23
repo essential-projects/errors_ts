@@ -32,7 +32,6 @@ export enum ErrorCodes {
   UnsupportedMediaTypeError = 415,
   RequestedRangeNotSatisfiableError = 416,
   ExpectationFailedError = 417,
-  ImATeapotError = 418,
   PolicyNotFulfilledError = 420,
   MisdirectedRequestError = 421,
   UnprocessableEntityError = 422,
