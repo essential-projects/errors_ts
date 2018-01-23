@@ -4,6 +4,7 @@ export * from './expectation_failed';
 export * from './failed_dependency';
 export * from './forbidden';
 export * from './gone';
+export * from './im_a_teapot';
 export * from './length_required';
 export * from './locked';
 export * from './method_not_allowed';
