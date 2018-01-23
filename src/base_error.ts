@@ -1,5 +1,6 @@
 export class BaseError extends Error {
   private _code: number;
+  private _additionalInformation: string;
 
   constructor(code: number, message: string) {
     super(message);
@@ -14,5 +15,13 @@ export class BaseError extends Error {
 
   public get isEssentialProjectsError(): boolean {
     return true;
+  }
+
+  public get additionalInformation(): string {
+    return this._additionalInformation;
+  }
+
+  public set additionalInformation(additionalInformation: string) {
+    this._additionalInformation = additionalInformation;
   }
 }
