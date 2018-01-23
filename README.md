@@ -19,17 +19,17 @@ your extensions of these errors.
 you just need to install it with
 
 ```
-npm install --save @essential-projects/errors
+npm install --save @essential-projects/errors.ts
 ```
 
 And then import the errors like this:
 
 ```
 // JavaScript-variant
-const ERRORNAME = require('@essential-projects/errors').ERRORNAME`
+const ERRORNAME = require('@essential-projects/errors.ts').ERRORNAME`
 
 // typescript-variant
-import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors';
+import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors.ts';
 ```
 
 Where `ERRORNAME` is the name error you want to import.
