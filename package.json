@@ -1,0 +1,34 @@
+{
+  "name": "@process-engine/errors",
+  "version": "0.1.0",
+  "description": "Technical errors that the protocol-adapters can handle",
+  "main": "dist/commonjs/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/process-engine/errors.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/process-engine/errors/issues"
+  },
+  "homepage": "https://github.com/process-engine/errors#readme",
+  "devDependencies": {
+    "@essential-projects/tslint-config": "^1.0.0-rc3",
+    "gulp": "^3.9.1",
+    "gulptraum": "^2.2.4",
+    "gulptraum-typescript": "^1.3.9",
+    "tsconfig": "^7.0.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "prepare": "npm run build && npm run build-schemas && npm run build-doc",
+    "build-doc": "gulp doc",
+    "build-schemas": "gulp typescript-schema",
+    "lint": "gulp lint",
+    "test": "gulp test"
+  }
+}
