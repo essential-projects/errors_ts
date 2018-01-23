@@ -1,5 +1,5 @@
 {
-  "name": "@essential-projects/errors",
+  "name": "@essential-projects/errors.ts",
   "version": "0.1.0",
   "description": "Technical errors that the protocol-adapters can handle",
   "main": "dist/commonjs/index.js",
