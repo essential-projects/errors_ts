@@ -1,7 +1,7 @@
 export * from './base_error';
 export * from './error_codes';
 
-export * from './client/index';
-export * from './information/index';
-export * from './redirect/index';
-export * from './server/index';
+export * from './client_errors/index';
+export * from './information_errors/index';
+export * from './redirect_errors/index';
+export * from './server_errors/index';
