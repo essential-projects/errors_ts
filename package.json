@@ -1,19 +1,19 @@
 {
-  "name": "@essential-projects/errors.ts",
+  "name": "@essential-projects/errors_ts",
   "version": "1.0.0-rc1",
   "description": "Technical errors that the protocol-adapters can handle",
   "main": "dist/commonjs/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/essential-projects/errors.ts.git"
+    "url": "git+https://github.com/essential-projects/errors_ts.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/essential-projects/errors.ts/issues"
+    "url": "https://github.com/essential-projects/errors_ts/issues"
   },
-  "homepage": "https://github.com/essential-projects/errors.ts#readme",
+  "homepage": "https://github.com/essential-projects/errors_ts#readme",
   "devDependencies": {
     "@essential-projects/tslint-config": "^1.0.0-rc3",
     "gulp": "^3.9.1",
