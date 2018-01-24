@@ -1,4 +1,4 @@
-# Errors.ts
+# Errors_ts
 
 A technical error provider.
 
@@ -23,17 +23,17 @@ A technical error provider.
    ... you just need to install it with:
 
    ```bash
-   npm install --save @essential-projects/errors.ts
+   npm install --save @essential-projects/errors_ts
    ```
 
    And then import the errors like this:
 
    ```js
    // JavaScript-variant
-   const ERRORNAME = require('@essential-projects/errors.ts').ERRORNAME`
+   const ERRORNAME = require('@essential-projects/errors_ts').ERRORNAME`
 
    // typescript-variant
-   import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors.ts';
+   import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors_ts';
    ```
 
    Where `ERRORNAME` is the name error you want to import.
