@@ -15,6 +15,7 @@ export class BaseError extends Error {
     const errorInfo: any = JSON.parse(serializedError);
     const errorClass: BaseError = new errorClasses[errorInfo.errorClassName](errorInfo.code, errorInfo.message);
     errorClass.stack = errorInfo.callStack;
+    errorClass.additionalInformation = errorInfo.additionalInformation;
 
     return errorClass;
   }
@@ -41,6 +42,7 @@ export class BaseError extends Error {
       code: this.code,
       message: this.message,
       callStack: this.stack,
+      additionalInformation: this.additionalInformation,
     });
   }
 }
