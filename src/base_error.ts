@@ -1,6 +1,6 @@
 export class BaseError extends Error {
-  private _code: number;
-  private _additionalInformation: string;
+  protected _code: number;
+  protected _additionalInformation: string;
 
   constructor(code: number, message: string) {
     super(message);
