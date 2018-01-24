@@ -11,7 +11,7 @@ export class BaseError extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 
-  public static toObject(serializedError: string): BaseError {
+  public static deserialize(serializedError: string): BaseError {
     const errorInfo: any = JSON.parse(serializedError);
     const errorClass: BaseError = new errorClasses[errorInfo.errorClassName](errorInfo.code, errorInfo.message);
     errorClass.stack = errorInfo.callStack;
@@ -35,7 +35,7 @@ export class BaseError extends Error {
     this._additionalInformation = additionalInformation;
   }
 
-  public toString(): string {
+  public serialize(): string {
     return JSON.stringify({
       errorClassName: this.constructor.name,
       code: this.code,
