@@ -1,3 +1,5 @@
+import * as errorClasses from './index';
+
 export class BaseError extends Error {
   protected _code: number;
   protected _additionalInformation: string;
@@ -7,6 +9,14 @@ export class BaseError extends Error {
     this._code = code;
     this.name = this.constructor.name;
     Error.captureStackTrace(this, this.constructor);
+  }
+
+  public static toObject(serializedError: string): BaseError {
+    const errorInfo: any = JSON.parse(serializedError);
+    const errorClass: BaseError = new errorClasses[errorInfo.errorClassName](errorInfo.code, errorInfo.message);
+    errorClass.stack = errorInfo.callStack;
+
+    return errorClass;
   }
 
   public get code(): number {
@@ -23,5 +33,14 @@ export class BaseError extends Error {
 
   public set additionalInformation(additionalInformation: string) {
     this._additionalInformation = additionalInformation;
+  }
+
+  public toString(): string {
+    return JSON.stringify({
+      errorClassName: this.constructor.name,
+      code: this.code,
+      message: this.message,
+      callStack: this.stack,
+    });
   }
 }
