@@ -30,5 +30,8 @@
     "build-schemas": "gulp typescript-schema",
     "lint": "gulp lint",
     "test": "gulp test"
+  },
+  "dependencies": {
+    "loggerhythm": "^3.0.3"
   }
 }
