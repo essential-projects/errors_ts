@@ -23,13 +23,18 @@ export class BaseError extends Error {
       throw new Error(`Error while deserializing an essential-projects-error: Couldn't parse string: ${error.message}`);
     }
 
-    if (errorInfo.errorClassName === undefined
-     || errorInfo.code === undefined
-     || errorInfo.callStack === undefined) {
+    const errorClassUndefined: boolean = errorInfo.errorClassName === undefined;
+    const codeUndefined: boolean = errorInfo.code === undefined;
+    const callStackUndefined: boolean = errorInfo.callStack === undefined;
+
+    const structureIsIncorrect: boolean = errorClassUndefined || codeUndefined || callStackUndefined;
+
+    if (structureIsIncorrect) {
       throw new Error('Error while deserializing an essential-projects-error: Serialized object has the wrong structure.');
     }
 
-    if (errorClasses[errorInfo.errorClassName] === undefined) {
+    const errorClassIsUnknown: boolean = errorClasses[errorInfo.errorClassName] === undefined;
+    if (errorClassIsUnknown) {
       throw new Error(`Error while deserializing an essential-projects-error: ${errorInfo.errorClassName} is not a known essential-projects-error`);
     }
 
@@ -59,7 +64,9 @@ export class BaseError extends Error {
   public serialize(): string {
 
     let essentialProjectsErrorName: string = this.constructor.name;
-    if (errorClasses[this.constructor.name] === undefined) {
+
+    const errorClassIsUnknown: boolean = errorClasses[this.constructor.name] === undefined;
+    if (errorClassIsUnknown) {
       // the error we want to serailize is not a known essential-projects-error.
       // It might extend one, and if so, we need to find the essential-projects-
       // error this one is based on.
@@ -79,12 +86,13 @@ export class BaseError extends Error {
         classToCheck = Object.getPrototypeOf(classToCheck);
       }
 
-      if (classToCheck === null) {
+      const essentialProjectsErrorNotFound: boolean = classToCheck === null;
+      if (essentialProjectsErrorNotFound) {
         // tslint:disable-next-line:max-line-length
-        throw new Error(`'serialize' was called on an error that extends an essential-projects BaseError, but no known essential-projects error was found in its prototype-chain. THIS SHOULD NEVER HAPPEN! Are you using mutliple versions of @essential-projects/errors_ts in your project?`);
+        throw new Error(`Method 'serialize' was called on an error that extends an essential-projects BaseError, but no known essential-projects error was found in its prototype-chain. THIS SHOULD NEVER HAPPEN! Are you using mutliple versions of @essential-projects/errors_ts in your project?`);
       }
 
-      logger.info(`derived error '${this.constructor.name}' will be serialized as '${essentialProjectsErrorName}'`);
+      logger.info(`Derived error '${this.constructor.name}' will be serialized as '${essentialProjectsErrorName}'`);
     }
 
     return JSON.stringify({
