@@ -3,9 +3,9 @@ import 'mocha';
 
 describe('Hello function', () => {
 
-  it('should return hello world', () => {
+  it('should return Hello World', () => {
     const result = 'Hello World!';
-    expect(result).to.equal('Hello world!');
+    expect(result).to.equal('Hello World!');
   });
 
 });
