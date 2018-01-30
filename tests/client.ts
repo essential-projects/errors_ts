@@ -1,7 +1,8 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import 'mocha';
 
-import { BadRequestError,
+import {
+  BadRequestError,
   BaseError,
   ConflictError,
   ErrorCodes,
@@ -31,7 +32,8 @@ import { BadRequestError,
   UnprocessableEntityError,
   UnsupportedMediaTypeError,
   UpgradeRequiredError,
-  URLTooLongError} from '../src/index';
+  URLTooLongError,
+} from '../src/index';
 
 let error: BaseError;
 let errorCode: number;

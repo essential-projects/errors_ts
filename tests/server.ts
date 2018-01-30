@@ -1,19 +1,21 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import 'mocha';
 
-import { BadGatewayError,
-        BandwithLimitExceededError,
-        BaseError,
-        GatewayTimeoutError,
-        InsufficientStorageError,
-        InternalServerError,
-        LoopDetectedError,
-        NetworkAuthenticationRequiredError,
-        NotImplementedError,
-        ServiceUnavaliableError,
-        VersionNotSupportedError } from '../src/index';
+import {
+  BadGatewayError,
+  BandwithLimitExceededError,
+  BaseError,
+  GatewayTimeoutError,
+  InsufficientStorageError,
+  InternalServerError,
+  LoopDetectedError,
+  NetworkAuthenticationRequiredError,
+  NotImplementedError,
+  ServiceUnavaliableError,
+  VersionNotSupportedError,
+} from '../src/index';
 
-import { ErrorCodes } from '../src/error_codes';
+import {ErrorCodes} from '../src/error_codes';
 
 let error: BaseError;
 let errorCode: number;

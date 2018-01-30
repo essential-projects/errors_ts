@@ -1,17 +1,19 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import 'mocha';
 
-import { BaseError,
-        FoundError,
-        MovedError,
-        MultipleChoicesError,
-        NotModifiedError,
-        PermanentRedirectError,
-        SeeOtherError,
-        TemporaryRedirectError,
-        UseProxyError } from '../src/index';
+import {
+  BaseError,
+  FoundError,
+  MovedError,
+  MultipleChoicesError,
+  NotModifiedError,
+  PermanentRedirectError,
+  SeeOtherError,
+  TemporaryRedirectError,
+  UseProxyError,
+} from '../src/index';
 
-import { ErrorCodes } from '../src/error_codes';
+import {ErrorCodes} from '../src/error_codes';
 
 let error: BaseError;
 let errorCode: number;
