@@ -97,59 +97,53 @@ describe('TooManyRequestsError', () => {
 error = new UnauthorizedError('UnauthorizedError');
 errorCode = ErrorCodes.TooManyRequestsError;
 describe('UnauthorizedError', () => {
-  it(`should return ${ErrorCodes.UnauthorizedError}`, () => {
-    const unauthorizedError: UnauthorizedError = new UnauthorizedError('unauthorizedError');
-    const result: number = unauthorizedError.code;
-    expect(result).to.equal(ErrorCodes.UnauthorizedError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
 error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
 errorCode = ErrorCodes.TooManyRequestsError;
 describe('UnavaliableForLegalReasonsError', () => {
-  it(`should return ${ErrorCodes.UnavaliableForLegalReasonsError}`, () => {
-    const unavaliableForLegalReasonsError: UnavaliableForLegalReasonsError = new UnavaliableForLegalReasonsError('unavaliableForLegalReasonsError');
-    const result: number = unavaliableForLegalReasonsError.code;
-    expect(result).to.equal(ErrorCodes.UnavaliableForLegalReasonsError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
 error = new UnprocessableEntityError('UnprocessableEntityError');
 errorCode = ErrorCodes.TooManyRequestsError;
 describe('UnprocessableEntityError', () => {
-  it(`should return ${ErrorCodes.UnprocessableEntityError}`, () => {
-    const unprocessableEntityError: UnprocessableEntityError = new UnprocessableEntityError('UnprocessableEntityError');
-    const result: number = unprocessableEntityError.code;
-    expect(result).to.equal(ErrorCodes.UnprocessableEntityError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
 error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
 errorCode = ErrorCodes.UnsupportedMediaTypeError;
 describe('UnsupportedMediaTypeError', () => {
-  it(`should return ${ErrorCodes.UnsupportedMediaTypeError}`, () => {
-    const unsupportedMediaTypeError: UnsupportedMediaTypeError = new UnsupportedMediaTypeError('unsupportedMediaTypeError');
-    const result: number = unsupportedMediaTypeError.code;
-    expect(result).to.equal(ErrorCodes.UnsupportedMediaTypeError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
 error = new UpgradeRequiredError('UpgradeRequiredError');
 errorCode = ErrorCodes.UpgradeRequiredError;
 describe('UpgradeRequiredError', () => {
-  it(`should return ${ErrorCodes.UpgradeRequiredError}`, () => {
-    const upgradeRequiredError: UpgradeRequiredError = new UpgradeRequiredError('upgradeRequiredError');
-    const result: number = upgradeRequiredError.code;
-    expect(result).to.equal(ErrorCodes.UpgradeRequiredError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
 error = new URLTooLongError('URLTooLongError');
 errorCode = ErrorCodes.URLTooLongError;
 describe('URLTooLongError', () => {
-  it(`should return ${ErrorCodes.URLTooLongError}`, () => {
-    const urlTooLongError: URLTooLongError = new URLTooLongError('urlTooLongError');
-    const result: number = urlTooLongError.code;
-    expect(result).to.equal(ErrorCodes.URLTooLongError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
