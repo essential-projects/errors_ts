@@ -1,4 +1,4 @@
-import {BadGatewayError, isError, NotFoundError} from '../src/index';
+import {BadGatewayError, isError, isEssentialProjectsError, NotFoundError} from '../src/index';
 
 import {expect} from 'chai';
 import 'mocha';
@@ -17,6 +17,22 @@ describe('Bad Gateway Error false', () => {
   it('should return false', () => {
     const badGate: boolean = isError(badGatewayError, NotFoundError);
     const result: boolean = badGate;
+    expect(result).to.equal(false);
+  });
+});
+
+describe('IsEssentialProjectsError true', () => {
+  it('should return true', () => {
+    const badGate: boolean = isEssentialProjectsError(badGatewayError);
+    const result: boolean = badGate;
+    expect(result).to.equal(true);
+  });
+});
+
+describe('IsEssentialProjectsError false', () => {
+  it('should return false', () => {
+    const falseError: boolean = isEssentialProjectsError('test');
+    const result: boolean = falseError;
     expect(result).to.equal(false);
   });
 });
