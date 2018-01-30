@@ -95,7 +95,7 @@ describe('TooManyRequestsError', () => {
 });
 
 error = new UnauthorizedError('UnauthorizedError');
-errorCode = ErrorCodes.TooManyRequestsError;
+errorCode = ErrorCodes.UnauthorizedError;
 describe('UnauthorizedError', () => {
   it(`should return ${errorCode}`, () => {
     const result: number = error.code;
@@ -104,7 +104,7 @@ describe('UnauthorizedError', () => {
 });
 
 error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
-errorCode = ErrorCodes.TooManyRequestsError;
+errorCode = ErrorCodes.UnavaliableForLegalReasonsError;
 describe('UnavaliableForLegalReasonsError', () => {
   it(`should return ${errorCode}`, () => {
     const result: number = error.code;
@@ -113,7 +113,7 @@ describe('UnavaliableForLegalReasonsError', () => {
 });
 
 error = new UnprocessableEntityError('UnprocessableEntityError');
-errorCode = ErrorCodes.TooManyRequestsError;
+errorCode = ErrorCodes.UnprocessableEntityError;
 describe('UnprocessableEntityError', () => {
   it(`should return ${errorCode}`, () => {
     const result: number = error.code;
