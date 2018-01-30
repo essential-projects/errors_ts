@@ -35,6 +35,5 @@
     "build-schemas": "gulp typescript-schema",
     "lint": "gulp lint",
     "test": "gulp test",
-    "unittest": "mocha -r ts-node/register tests/index.ts"
   }
 }
