@@ -40,6 +40,14 @@ A technical error provider.
 
    All essential-projects-errors have the `isEssentialProjectsError`-property, so they can be identified as such.
 
+# Test
+
+In order to run the test:
+
+```bash
+npm test
+```
+
 # Errors
 
 The Errors are mostly based on
