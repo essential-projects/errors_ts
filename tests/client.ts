@@ -1,8 +1,23 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { ErrorCodes,
+import { BadRequestError,
   BaseError,
+  ConflictError,
+  ErrorCodes,
+  ExpectationFailedError,
+  FailedDependencyError,
+  ForbiddenError,
+  GoneError,
+  ImATeapotError,
+  LengthRequiredError,
+  LockedError,
+  MethodNotAllowedError,
+  MisdirectedRequestError,
+  NotAcceptableError,
+  NotFoundError,
+  PaymentRequiredError,
+  PolicyNotFulfilledError,
   PreconditionFailedError,
   PreconditionRequiredError,
   ProxyAuthenticationRequiredError,
@@ -16,22 +31,7 @@ import { ErrorCodes,
   UnprocessableEntityError,
   UnsupportedMediaTypeError,
   UpgradeRequiredError,
-  URLTooLongError, 
-  BadRequestError,
-  ConflictError,
-  ExpectationFailedError,
-  FailedDependencyError,
-  ForbiddenError,
-  GoneError,
-  ImATeapotError,
-  LengthRequiredError,
-  LockedError,
-  MethodNotAllowedError,
-  MisdirectedRequestError,
-  NotAcceptableError,
-  NotFoundError,
-  PaymentRequiredError,
-  PolicyNotFulfilledError} from '../src/index';
+  URLTooLongError} from '../src/index';
 
 let error: BaseError;
 let errorCode: number;
@@ -162,139 +162,146 @@ describe('URLTooLongError', () => {
   });
 });
 
-
+error = new BadRequestError('BadRequestError');
+errorCode = ErrorCodes.BadRequestError;
 describe('Bad Request Error', () => {
-  it('should return ' + ErrorCodes.BadRequestError, () => {
-    const badRequestError = new BadRequestError('BadRequestError');
-    const result: number = badRequestError.code;
-    expect(result).to.equal(ErrorCodes.BadRequestError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new ConflictError('ConflictError');
+errorCode = ErrorCodes.ConflictError;
 describe('Conflict Error', () => {
-  it('should return ' + ErrorCodes.ConflictError, () => {
-    const conflictError = new ConflictError('ConflictError');
-    const result: number = conflictError.code;
-    expect(result).to.equal(ErrorCodes.ConflictError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new ExpectationFailedError('ExpectationFailedError');
+errorCode = ErrorCodes.ExpectationFailedError;
 describe('Expectation Failed Error', () => {
-  it('should return ' + ErrorCodes.ExpectationFailedError, () => {
-    const expectationFailedError = new ExpectationFailedError('ExpectationFailedError');
-    const result: number = expectationFailedError.code;
-    expect(result).to.equal(ErrorCodes.ExpectationFailedError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new FailedDependencyError('FailedDependencyError');
+errorCode = ErrorCodes.FailedDependencyError;
 describe('Failed Dependency Error', () => {
-  it('should return ' + ErrorCodes.FailedDependencyError, () => {
-    const failedDependencyError = new FailedDependencyError('FailedDependencyError');
-    const result: number = failedDependencyError.code;
-    expect(result).to.equal(ErrorCodes.FailedDependencyError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new ForbiddenError('ForbiddenError');
+errorCode = ErrorCodes.ForbiddenError;
 describe('Forbidden Error', () => {
-  it('should return ' + ErrorCodes.ForbiddenError, () => {
-    const forbiddenError = new ForbiddenError('ForbiddenError');
-    const result: number = forbiddenError.code;
-    expect(result).to.equal(ErrorCodes.ForbiddenError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new GoneError('GoneError');
+errorCode = ErrorCodes.GoneError;
 describe('Gone Error', () => {
-  it('should return ' + ErrorCodes.GoneError, () => {
-    const goneError = new GoneError('GoneError');
-    const result: number = goneError.code;
-    expect(result).to.equal(ErrorCodes.GoneError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new ImATeapotError('ImATeapotError');
+errorCode = ErrorCodes.ImATeapotError;
 describe('Im a Teapot Error', () => {
-  it('should return ' + ErrorCodes.ImATeapotError, () => {
-    const imATeapotError = new ImATeapotError('ImATeapotError');
-    const result: number = imATeapotError.code;
-    expect(result).to.equal(ErrorCodes.ImATeapotError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new LengthRequiredError('LengthRequiredError');
+errorCode = ErrorCodes.LengthRequiredError;
 describe('Length Required Error', () => {
-  it('should return ' + ErrorCodes.LengthRequiredError, () => {
-    const lengthRequiredError = new LengthRequiredError('LengthRequiredError');
-    const result: number = lengthRequiredError.code;
-    expect(result).to.equal(ErrorCodes.LengthRequiredError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new LockedError('LockedError');
+errorCode = ErrorCodes.LockedError;
 describe('Locked Error', () => {
-  it('should return ' + ErrorCodes.LockedError, () => {
-    const lockedError = new LockedError('LockedError');
-    const result: number = lockedError.code;
-    expect(result).to.equal(ErrorCodes.LockedError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new MethodNotAllowedError('MethodNotAllowedError');
+errorCode = ErrorCodes.MethodNotAllowedError;
 describe('Method Not Allowed Error', () => {
-  it('should return ' + ErrorCodes.MethodNotAllowedError, () => {
-    const methodNotAllowedError = new MethodNotAllowedError('MethodNotAllowedError');
-    const result: number = methodNotAllowedError.code;
-    expect(result).to.equal(ErrorCodes.MethodNotAllowedError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new MisdirectedRequestError('MisdirectedRequestError');
+errorCode = ErrorCodes.MisdirectedRequestError;
 describe('Misdirected Request Error', () => {
-  it('should return ' + ErrorCodes.MisdirectedRequestError, () => {
-    const misdirectedRequestError = new MisdirectedRequestError('MisdirectedRequestError');
-    const result: number = misdirectedRequestError.code;
-    expect(result).to.equal(ErrorCodes.MisdirectedRequestError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new NotAcceptableError('NotAcceptableError');
+errorCode = ErrorCodes.NotAcceptableError;
 describe('Not Acceptable Error', () => {
-  it('should return ' + ErrorCodes.NotAcceptableError, () => {
-    const notAcceptableError = new NotAcceptableError('NotAcceptableError');
-    const result: number = notAcceptableError.code;
-    expect(result).to.equal(ErrorCodes.NotAcceptableError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new NotFoundError('NotFoundError');
+errorCode = ErrorCodes.NotFoundError;
 describe('Not Found Error', () => {
-  it('should return ' + ErrorCodes.NotFoundError, () => {
-    const notFoundError = new NotFoundError('NotFoundError');
-    const result: number = notFoundError.code;
-    expect(result).to.equal(ErrorCodes.NotFoundError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new PaymentRequiredError('PaymentRequiredError');
+errorCode = ErrorCodes.PaymentRequiredError;
 describe('Payment Required Error', () => {
-  it('should return ' + ErrorCodes.PaymentRequiredError, () => {
-    const paymentRequiredError = new PaymentRequiredError('PaymentRequiredError');
-    const result: number = paymentRequiredError.code;
-    expect(result).to.equal(ErrorCodes.PaymentRequiredError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
+errorCode = ErrorCodes.PolicyNotFulfilledError;
 describe('Policy Not Fulfilled Error', () => {
-  it('should return ' + ErrorCodes.PolicyNotFulfilledError, () => {
-    const policyNotFulfilledError = new PolicyNotFulfilledError('PolicyNotFulfilledError');
-    const result: number = policyNotFulfilledError.code;
-    expect(result).to.equal(ErrorCodes.PolicyNotFulfilledError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
 
+error = new PreconditionFailedError('PreconditionFailedError');
+errorCode = ErrorCodes.PreconditionFailedError;
 describe('Precondition Failed Error', () => {
-  it('should return ' + ErrorCodes.PreconditionFailedError, () => {
-    const preconditionFailedError = new PreconditionFailedError('PreconditionFailedError');
-    const result: number = preconditionFailedError.code;
-    expect(result).to.equal(ErrorCodes.PreconditionFailedError);
-  });
-});
-
-describe('Precondition Required Error', () => {
-  it('should return ' + ErrorCodes.PreconditionRequiredError, () => {
-    const preconditionRequiredError = new PreconditionRequiredError('PreconditionRequiredError');
-    const result: number = preconditionRequiredError.code;
-    expect(result).to.equal(ErrorCodes.PreconditionRequiredError);
+  it(`should return ${errorCode}`, () => {
+    const result: number = error.code;
+    expect(result).to.equal(errorCode);
   });
 });
