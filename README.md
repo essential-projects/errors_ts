@@ -53,9 +53,9 @@ Every Error, except for the `BaseError` directly extends `BaseError`, and
 | BaseError                          |         |
 |                                    |         |
 | **Information Errors**             | **1xx** |
-| ContinueError                      | 101     |
-| SwitchingProtocolsError            | 102     |
-| ProcessingError                    | 103     |
+| ContinueError                      | 100     |
+| SwitchingProtocolsError            | 101     |
+| ProcessingError                    | 102     |
 |                                    |         |
 | **Redirect Errors**                | **3xx** |
 | MultipleChoicesError               | 300     |
