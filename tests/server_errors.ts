@@ -18,94 +18,83 @@ import {
 import {ErrorCodes} from '../src/error_codes';
 
 let error: BaseError;
-let errorCode: number;
 
 describe('BadGatewayError', () => {
-  error = new BadGatewayError('BadGatewayError');
-  errorCode = ErrorCodes.BadGatewayError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.BadGatewayError}`, () => {
+    error = new BadGatewayError('BadGatewayError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.BadGatewayError);
     });
   });
 
 describe('BandwithLimitExceededError', () => {
-  error = new BandwithLimitExceededError('BandwithLimitExceededError');
-  errorCode = ErrorCodes.BandwithLimitExceededError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.BandwithLimitExceededError}`, () => {
+    error = new BandwithLimitExceededError('BandwithLimitExceededError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.BandwithLimitExceededError);
     });
   });
 
 describe('GatewayTimeoutError', () => {
-  error = new GatewayTimeoutError('GatewayTimeoutError');
-  errorCode = ErrorCodes.GatewayTimeoutError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.GatewayTimeoutError}`, () => {
+    error = new GatewayTimeoutError('GatewayTimeoutError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.GatewayTimeoutError);
     });
   });
 
 describe('InsufficientStorageError', () => {
-  error = new InsufficientStorageError('InsufficientStorageError');
-  errorCode = ErrorCodes.InsufficientStorageError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.InsufficientStorageError}`, () => {
+    error = new InsufficientStorageError('InsufficientStorageError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.InsufficientStorageError);
     });
   });
 
 describe('InternalServerError', () => {
-  error = new InternalServerError('InternalServerError');
-  errorCode = ErrorCodes.InternalServerError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.InternalServerError}`, () => {
+      error = new InternalServerError('InternalServerError');
       const result: number = error.code;
-      expect(result).to.equal(errorCode);
+      expect(result).to.equal(ErrorCodes.InternalServerError);
     });
   });
 
 describe('LoopDetectedError', () => {
-  error = new LoopDetectedError('LoopDetectedError');
-  errorCode = ErrorCodes.LoopDetectedError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.LoopDetectedError}`, () => {
+    error = new LoopDetectedError('LoopDetectedError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.LoopDetectedError);
     });
   });
 
 describe('NetworkAuthenticationRequiredError', () => {
-  error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
-  errorCode = ErrorCodes.NetworkAuthenticationRequiredError;
-  it(`should return ${errorCode}`, () => {
-      const result: number = error.code;
-      expect(result).to.equal(errorCode);
+  it(`should return ${ErrorCodes.NetworkAuthenticationRequiredError}`, () => {
+    error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
+    const result: number = error.code;
+    expect(result).to.equal(ErrorCodes.NetworkAuthenticationRequiredError);
     });
   });
 
 describe('NotImplementedError', () => {
-  error = new NotImplementedError('NotImplementedError');
-  errorCode = ErrorCodes.NotImplementedError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.NotImplementedError}`, () => {
+      error = new NotImplementedError('NotImplementedError');
       const result: number = error.code;
-      expect(result).to.equal(errorCode);
+      expect(result).to.equal(ErrorCodes.NotImplementedError);
     });
   });
 
 describe('ServiceUnavaliableError', () => {
-  error = new ServiceUnavaliableError('ServiceUnavaliableError');
-  errorCode = ErrorCodes.ServiceUnavaliableError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.ServiceUnavaliableError}`, () => {
+      error = new ServiceUnavaliableError('ServiceUnavaliableError');
       const result: number = error.code;
-      expect(result).to.equal(errorCode);
+      expect(result).to.equal(ErrorCodes.ServiceUnavaliableError);
     });
   });
 
 describe('VersionNotSupportedError', () => {
-  error = new VersionNotSupportedError('VersionNotSupportedError');
-  errorCode = ErrorCodes.VersionNotSupportedError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.VersionNotSupportedError}`, () => {
+      error = new VersionNotSupportedError('VersionNotSupportedError');
       const result: number = error.code;
-      expect(result).to.equal(errorCode);
+      expect(result).to.equal(ErrorCodes.VersionNotSupportedError);
     });
   });

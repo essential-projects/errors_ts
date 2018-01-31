@@ -16,76 +16,66 @@ import {
 import {ErrorCodes} from '../src/error_codes';
 
 let error: BaseError;
-let errorCode: number;
-
 describe('FoundError', () => {
-  error = new FoundError('FoundError');
-  errorCode = ErrorCodes.FoundError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.FoundError}`, () => {
+    error = new FoundError('FoundError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.FoundError);
   });
 });
 
 describe('MovedError', () => {
-  error = new MovedError('MovedError');
-  errorCode = ErrorCodes.MovedError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.MovedError}`, () => {
+    error = new MovedError('MovedError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.MovedError);
   });
 });
 
 describe('MultipleChoicesError', () => {
-  error = new MultipleChoicesError('MultipleChoicesError');
-  errorCode = ErrorCodes.MultipleChoicesError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.MultipleChoicesError}`, () => {
+    error = new MultipleChoicesError('MultipleChoicesError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.MultipleChoicesError);
   });
 });
 
 describe('NotModifiedError', () => {
-  error = new NotModifiedError('NotModifiedError');
-  errorCode = ErrorCodes.NotModifiedError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.NotModifiedError}`, () => {
+    error = new NotModifiedError('NotModifiedError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.NotModifiedError);
   });
 });
 
 describe('PermanentRedirectError', () => {
-  error = new PermanentRedirectError('PermanentRedirectError');
-  errorCode = ErrorCodes.PermanentRedirectError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.PermanentRedirectError}`, () => {
+    error = new PermanentRedirectError('PermanentRedirectError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.PermanentRedirectError);
   });
 });
 
 describe('SeeOtherError', () => {
-  error = new SeeOtherError('SeeOtherError');
-  errorCode = ErrorCodes.SeeOtherError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.SeeOtherError}`, () => {
+    error = new SeeOtherError('SeeOtherError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.SeeOtherError);
   });
 });
 
 describe('TemporaryRedirectError', () => {
-  error = new TemporaryRedirectError('TemporaryRedirectError');
-  errorCode = ErrorCodes.TemporaryRedirectError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.TemporaryRedirectError}`, () => {
+    error = new TemporaryRedirectError('TemporaryRedirectError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.TemporaryRedirectError);
   });
 });
 
 describe('UseProxyError', () => {
-  error = new UseProxyError('UseProxyError');
-  errorCode = ErrorCodes.UseProxyError;
-  it(`should return ${errorCode}`, () => {
+  it(`should return ${ErrorCodes.UseProxyError}`, () => {
+    error = new UseProxyError('UseProxyError');
     const result: number = error.code;
-    expect(result).to.equal(errorCode);
+    expect(result).to.equal(ErrorCodes.UseProxyError);
   });
 });
