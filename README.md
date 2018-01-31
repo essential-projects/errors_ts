@@ -40,6 +40,14 @@ A technical error provider.
 
    All essential-projects-errors have the `isEssentialProjectsError`-property, so they can be identified as such.
 
+# Test
+
+In order to run the test:
+
+```bash
+npm test
+```
+
 # Errors
 
 The Errors are mostly based on
@@ -53,9 +61,9 @@ Every Error, except for the `BaseError` directly extends `BaseError`, and
 | BaseError                          |         |
 |                                    |         |
 | **Information Errors**             | **1xx** |
-| ContinueError                      | 101     |
-| SwitchingProtocolsError            | 102     |
-| ProcessingError                    | 103     |
+| ContinueError                      | 100     |
+| SwitchingProtocolsError            | 101     |
+| ProcessingError                    | 102     |
 |                                    |         |
 | **Redirect Errors**                | **3xx** |
 | MultipleChoicesError               | 300     |
