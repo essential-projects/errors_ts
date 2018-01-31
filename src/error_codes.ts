@@ -1,7 +1,7 @@
 export enum ErrorCodes {
-  ContinueError = 101,
-  SwitchingProtocolsError = 102,
-  ProcessingError = 103,
+  ContinueError = 100,
+  SwitchingProtocolsError = 101,
+  ProcessingError = 102,
 
   // 300-redirect-errors
   MultipleChoicesError = 300,
