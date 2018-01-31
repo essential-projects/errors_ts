@@ -1,4 +1,3 @@
-import {expect} from 'chai';
 import 'mocha';
 
 import {
@@ -36,274 +35,305 @@ import {
 } from '../src/index';
 
 let error: BaseError;
-let errorCode: number;
 
-error = new PreconditionFailedError('PreconditionFailedError');
-errorCode = ErrorCodes.PreconditionFailedError;
-describe('PreconditionFailedError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+describe('client_errors', () => {
+  describe('PreconditionFailedError', () => {
+    it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
+      error = new PreconditionFailedError('PreconditionFailedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.PreconditionFailedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.PreconditionFailedError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new PreconditionRequiredError('PreconditionRequiredError');
-errorCode = ErrorCodes.PreconditionRequiredError;
-describe('PreconditionRequiredError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('PreconditionRequiredError', () => {
+    it(`should return ${ErrorCodes.PreconditionRequiredError}`, () => {
+      error = new PreconditionRequiredError('PreconditionRequiredError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.PreconditionRequiredError) {
+        throw new Error(`Expected error Code ${ErrorCodes.PreconditionRequiredError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new ProxyAuthenticationRequiredError('ProxyAuthenticationRequiredError');
-errorCode = ErrorCodes.ProxyAuthenticationRequiredError;
-describe('ProxyAuthenticationRequiredError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('ProxyAuthenticationRequiredError', () => {
+    it(`should return ${ErrorCodes.ProxyAuthenticationRequiredError}`, () => {
+      error = new ProxyAuthenticationRequiredError('ProxyAuthenticationRequiredError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.ProxyAuthenticationRequiredError) {
+        throw new Error(`Expected error Code ${ErrorCodes.ProxyAuthenticationRequiredError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new RequestHeaderTooLargeError('RequestHeaderTooLargeError');
-errorCode = ErrorCodes.RequestHeaderTooLargeError;
-describe('RequestHeaderTooLargeError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('RequestHeaderTooLargeError', () => {
+    it(`should return ${ErrorCodes.RequestHeaderTooLargeError}`, () => {
+      error = new RequestHeaderTooLargeError('RequestHeaderTooLargeError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.RequestHeaderTooLargeError) {
+        throw new Error(`Expected error Code ${ErrorCodes.RequestHeaderTooLargeError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new RequestTimeoutError('RequestTimeoutError');
-errorCode = ErrorCodes.RequestTimeoutError;
-describe('RequestTimeoutError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('RequestTimeoutError', () => {
+    it(`should return ${ErrorCodes.RequestTimeoutError}`, () => {
+      error = new RequestTimeoutError('RequestTimeoutError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.RequestTimeoutError) {
+        throw new Error(`Expected error Code ${ErrorCodes.RequestTimeoutError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new RequestTooLargeError('RequestTooLargeError');
-errorCode = ErrorCodes.RequestTooLargeError;
-describe('RequestTooLargeError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('RequestTooLargeError', () => {
+    it(`should return ${ErrorCodes.RequestTooLargeError}`, () => {
+      error = new RequestTooLargeError('RequestTooLargeError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.RequestTooLargeError) {
+        throw new Error(`Expected error Code ${ErrorCodes.RequestTooLargeError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new RequestedRangeNotSatisfiableError('RequestedRangeNotSatisfiableError');
-errorCode = ErrorCodes.RequestedRangeNotSatisfiableError;
-describe('RequestedRangeNotSatisfiableError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('RequestedRangeNotSatisfiableError', () => {
+    it(`should return ${ErrorCodes.RequestedRangeNotSatisfiableError}`, () => {
+      error = new RequestedRangeNotSatisfiableError('RequestedRangeNotSatisfiableError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.RequestedRangeNotSatisfiableError) {
+        throw new Error(`Expected error Code ${ErrorCodes.RequestedRangeNotSatisfiableError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new TooManyRequestsError('TooManyRequestsError');
-errorCode = ErrorCodes.TooManyRequestsError;
-describe('TooManyRequestsError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('TooManyRequestsError', () => {
+    it(`should return ${ErrorCodes.TooManyRequestsError}`, () => {
+      error = new TooManyRequestsError('TooManyRequestsError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.TooManyRequestsError) {
+        throw new Error(`Expected error Code ${ErrorCodes.TooManyRequestsError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new UnauthorizedError('UnauthorizedError');
-errorCode = ErrorCodes.UnauthorizedError;
-describe('UnauthorizedError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('UnauthorizedError', () => {
+    it(`should return ${ErrorCodes.UnauthorizedError}`, () => {
+      error = new UnauthorizedError('UnauthorizedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.UnauthorizedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.UnauthorizedError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
-errorCode = ErrorCodes.UnavaliableForLegalReasonsError;
-describe('UnavaliableForLegalReasonsError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('UnavaliableForLegalReasonsError', () => {
+    it(`should return ${ErrorCodes.UnavaliableForLegalReasonsError}`, () => {
+      error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.UnavaliableForLegalReasonsError) {
+        throw new Error(`Expected error Code ${ErrorCodes.UnavaliableForLegalReasonsError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new UnprocessableEntityError('UnprocessableEntityError');
-errorCode = ErrorCodes.UnprocessableEntityError;
-describe('UnprocessableEntityError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('UnprocessableEntityError', () => {
+    it(`should return ${ErrorCodes.UnprocessableEntityError}`, () => {
+      error = new UnprocessableEntityError('UnprocessableEntityError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.UnprocessableEntityError) {
+        throw new Error(`Expected error Code ${ErrorCodes.UnprocessableEntityError} but was ${result}.`);
+    }
+    });
   });
-});
 
-error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
-errorCode = ErrorCodes.UnsupportedMediaTypeError;
-describe('UnsupportedMediaTypeError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('UnsupportedMediaTypeError', () => {
+    it(`should return ${ErrorCodes.UnsupportedMediaTypeError}`, () => {
+      error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.UnsupportedMediaTypeError) {
+        throw new Error(`Expected error Code ${ErrorCodes.UnsupportedMediaTypeError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new UpgradeRequiredError('UpgradeRequiredError');
-errorCode = ErrorCodes.UpgradeRequiredError;
-describe('UpgradeRequiredError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('UpgradeRequiredError', () => {
+    it(`should return ${ErrorCodes.UpgradeRequiredError}`, () => {
+      error = new UpgradeRequiredError('UpgradeRequiredError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.UpgradeRequiredError) {
+        throw new Error(`Expected error Code ${ErrorCodes.UpgradeRequiredError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new URLTooLongError('URLTooLongError');
-errorCode = ErrorCodes.URLTooLongError;
-describe('URLTooLongError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('URLTooLongError', () => {
+    it(`should return ${ErrorCodes.URLTooLongError}`, () => {
+      error = new URLTooLongError('URLTooLongError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.URLTooLongError) {
+        throw new Error(`Expected error Code ${ErrorCodes.URLTooLongError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new BadRequestError('BadRequestError');
-errorCode = ErrorCodes.BadRequestError;
-describe('Bad Request Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Bad Request Error', () => {
+    it(`should return ${ErrorCodes.BadRequestError}`, () => {
+      error = new BadRequestError('BadRequestError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.BadRequestError) {
+        throw new Error(`Expected error Code ${ErrorCodes.BadRequestError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new ConflictError('ConflictError');
-errorCode = ErrorCodes.ConflictError;
-describe('Conflict Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Conflict Error', () => {
+    it(`should return ${ErrorCodes.ConflictError}`, () => {
+      error = new ConflictError('ConflictError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.ConflictError) {
+        throw new Error(`Expected error Code ${ErrorCodes.ConflictError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new ExpectationFailedError('ExpectationFailedError');
-errorCode = ErrorCodes.ExpectationFailedError;
-describe('Expectation Failed Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Expectation Failed Error', () => {
+    it(`should return ${ErrorCodes.ExpectationFailedError}`, () => {
+      error = new ExpectationFailedError('ExpectationFailedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.ExpectationFailedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.ExpectationFailedError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new FailedDependencyError('FailedDependencyError');
-errorCode = ErrorCodes.FailedDependencyError;
-describe('Failed Dependency Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Failed Dependency Error', () => {
+    it(`should return ${ErrorCodes.FailedDependencyError}`, () => {
+      error = new FailedDependencyError('FailedDependencyError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.FailedDependencyError) {
+        throw new Error(`Expected error Code ${ErrorCodes.FailedDependencyError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new ForbiddenError('ForbiddenError');
-errorCode = ErrorCodes.ForbiddenError;
-describe('Forbidden Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Forbidden Error', () => {
+    it(`should return ${ErrorCodes.ForbiddenError}`, () => {
+      error = new ForbiddenError('ForbiddenError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.ForbiddenError) {
+        throw new Error(`Expected error Code ${ErrorCodes.ForbiddenError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new GoneError('GoneError');
-errorCode = ErrorCodes.GoneError;
-describe('Gone Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Gone Error', () => {
+    it(`should return ${ErrorCodes.GoneError}`, () => {
+      error = new GoneError('GoneError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.GoneError) {
+        throw new Error(`Expected error Code ${ErrorCodes.GoneError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new ImATeapotError('ImATeapotError');
-errorCode = ErrorCodes.ImATeapotError;
-describe('Im a Teapot Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Im a Teapot Error', () => {
+    it(`should return ${ErrorCodes.ImATeapotError}`, () => {
+      error = new ImATeapotError('ImATeapotError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.ImATeapotError) {
+        throw new Error(`Expected error Code ${ErrorCodes.ImATeapotError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new LengthRequiredError('LengthRequiredError');
-errorCode = ErrorCodes.LengthRequiredError;
-describe('Length Required Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Length Required Error', () => {
+    it(`should return ${ErrorCodes.LengthRequiredError}`, () => {
+      error = new LengthRequiredError('LengthRequiredError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.LengthRequiredError) {
+        throw new Error(`Expected error Code ${ErrorCodes.LengthRequiredError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new LockedError('LockedError');
-errorCode = ErrorCodes.LockedError;
-describe('Locked Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Locked Error', () => {
+    it(`should return ${ErrorCodes.LockedError}`, () => {
+      error = new LockedError('LockedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.LockedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.LockedError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new MethodNotAllowedError('MethodNotAllowedError');
-errorCode = ErrorCodes.MethodNotAllowedError;
-describe('Method Not Allowed Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Method Not Allowed Error', () => {
+    it(`should return ${ErrorCodes.MethodNotAllowedError}`, () => {
+      error = new MethodNotAllowedError('MethodNotAllowedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.MethodNotAllowedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.MethodNotAllowedError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new MisdirectedRequestError('MisdirectedRequestError');
-errorCode = ErrorCodes.MisdirectedRequestError;
-describe('Misdirected Request Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Misdirected Request Error', () => {
+    it(`should return ${ErrorCodes.MisdirectedRequestError}`, () => {
+      error = new MisdirectedRequestError('MisdirectedRequestError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.MisdirectedRequestError) {
+        throw new Error(`Expected error Code ${ErrorCodes.MisdirectedRequestError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new NotAcceptableError('NotAcceptableError');
-errorCode = ErrorCodes.NotAcceptableError;
-describe('Not Acceptable Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Not Acceptable Error', () => {
+    it(`should return ${ErrorCodes.NotAcceptableError}`, () => {
+      error = new NotAcceptableError('NotAcceptableError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.NotAcceptableError) {
+        throw new Error(`Expected error Code ${ErrorCodes.NotAcceptableError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new NotFoundError('NotFoundError');
-errorCode = ErrorCodes.NotFoundError;
-describe('Not Found Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Not Found Error', () => {
+    it(`should return ${ErrorCodes.NotFoundError}`, () => {
+      error = new NotFoundError('NotFoundError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.NotFoundError) {
+        throw new Error(`Expected error Code ${ErrorCodes.NotFoundError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new PaymentRequiredError('PaymentRequiredError');
-errorCode = ErrorCodes.PaymentRequiredError;
-describe('Payment Required Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Payment Required Error', () => {
+    it(`should return ${ErrorCodes.PaymentRequiredError}`, () => {
+      error = new PaymentRequiredError('PaymentRequiredError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.PaymentRequiredError) {
+        throw new Error(`Expected error Code ${ErrorCodes.PaymentRequiredError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
-errorCode = ErrorCodes.PolicyNotFulfilledError;
-describe('Policy Not Fulfilled Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Policy Not Fulfilled Error', () => {
+    it(`should return ${ErrorCodes.PolicyNotFulfilledError}`, () => {
+      error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.PolicyNotFulfilledError) {
+        throw new Error(`Expected error Code ${ErrorCodes.PolicyNotFulfilledError} but was ${result}.`);
+      }
+    });
   });
-});
 
-error = new PreconditionFailedError('PreconditionFailedError');
-errorCode = ErrorCodes.PreconditionFailedError;
-describe('Precondition Failed Error', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('Precondition Failed Error', () => {
+    it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
+      error = new PreconditionFailedError('PreconditionFailedError');
+      const result: number = error.code;
+      if (result !== ErrorCodes.PreconditionFailedError) {
+        throw new Error(`Expected error Code ${ErrorCodes.PreconditionFailedError} but was ${result}.`);
+      }
+    });
   });
 });
