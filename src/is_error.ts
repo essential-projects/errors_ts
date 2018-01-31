@@ -15,5 +15,16 @@ export function isError<ErrorType extends BaseError>(error: any, errorClass: ICl
     return false;
   }
 
-  return error.constructor.name === errorClass.name;
+  let classToCheck: any = error;
+  while (classToCheck !== null) {
+    const currentClassInPrototypeChainIsSearchedFor: Boolean = classToCheck.constructor !== undefined
+                                                            && classToCheck.constructor.name === errorClass.name;
+    if (currentClassInPrototypeChainIsSearchedFor) {
+      return true;
+    }
+
+    classToCheck = Object.getPrototypeOf(classToCheck);
+  }
+
+  return false;
 }

@@ -35,5 +35,8 @@
     "build-schemas": "gulp typescript-schema",
     "lint": "gulp lint",
     "test": "mocha -r ts-node/register tests/index.ts"
+  },
+  "dependencies": {
+    "loggerhythm": "^3.0.3"
   }
 }
