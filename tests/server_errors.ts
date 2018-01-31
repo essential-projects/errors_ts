@@ -20,92 +20,92 @@ import {ErrorCodes} from '../src/error_codes';
 let error: BaseError;
 let errorCode: number;
 
-error = new BadGatewayError('BadGatewayError');
-errorCode = ErrorCodes.BadGatewayError;
 describe('BadGatewayError', () => {
+  error = new BadGatewayError('BadGatewayError');
+  errorCode = ErrorCodes.BadGatewayError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new BandwithLimitExceededError('BandwithLimitExceededError');
-errorCode = ErrorCodes.BandwithLimitExceededError;
 describe('BandwithLimitExceededError', () => {
+  error = new BandwithLimitExceededError('BandwithLimitExceededError');
+  errorCode = ErrorCodes.BandwithLimitExceededError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new GatewayTimeoutError('GatewayTimeoutError');
-errorCode = ErrorCodes.GatewayTimeoutError;
 describe('GatewayTimeoutError', () => {
+  error = new GatewayTimeoutError('GatewayTimeoutError');
+  errorCode = ErrorCodes.GatewayTimeoutError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new InsufficientStorageError('InsufficientStorageError');
-errorCode = ErrorCodes.InsufficientStorageError;
 describe('InsufficientStorageError', () => {
+  error = new InsufficientStorageError('InsufficientStorageError');
+  errorCode = ErrorCodes.InsufficientStorageError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new InternalServerError('InternalServerError');
-errorCode = ErrorCodes.InternalServerError;
 describe('InternalServerError', () => {
+  error = new InternalServerError('InternalServerError');
+  errorCode = ErrorCodes.InternalServerError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new LoopDetectedError('LoopDetectedError');
-errorCode = ErrorCodes.LoopDetectedError;
 describe('LoopDetectedError', () => {
+  error = new LoopDetectedError('LoopDetectedError');
+  errorCode = ErrorCodes.LoopDetectedError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
-errorCode = ErrorCodes.NetworkAuthenticationRequiredError;
 describe('NetworkAuthenticationRequiredError', () => {
+  error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
+  errorCode = ErrorCodes.NetworkAuthenticationRequiredError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new NotImplementedError('NotImplementedError');
-errorCode = ErrorCodes.NotImplementedError;
 describe('NotImplementedError', () => {
+  error = new NotImplementedError('NotImplementedError');
+  errorCode = ErrorCodes.NotImplementedError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new ServiceUnavaliableError('ServiceUnavaliableError');
-errorCode = ErrorCodes.ServiceUnavaliableError;
 describe('ServiceUnavaliableError', () => {
+  error = new ServiceUnavaliableError('ServiceUnavaliableError');
+  errorCode = ErrorCodes.ServiceUnavaliableError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
 
-error = new VersionNotSupportedError('VersionNotSupportedError');
-errorCode = ErrorCodes.VersionNotSupportedError;
 describe('VersionNotSupportedError', () => {
+  error = new VersionNotSupportedError('VersionNotSupportedError');
+  errorCode = ErrorCodes.VersionNotSupportedError;
   it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+      const result: number = error.code;
+      expect(result).to.equal(errorCode);
+    });
   });
-});
