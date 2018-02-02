@@ -162,9 +162,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.ConflictError}`, () => {
       error = new ConflictError('ConflictError');
       const result: number = error.code;
-      if (result !== ErrorCodes.ConflictError) {
-        throw new Error(`Expected error Code ${ErrorCodes.ConflictError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.ConflictError);
     });
   });
 
@@ -172,9 +170,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.ExpectationFailedError}`, () => {
       error = new ExpectationFailedError('ExpectationFailedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.ExpectationFailedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.ExpectationFailedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.ExpectationFailedError);
     });
   });
 
@@ -182,9 +178,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.FailedDependencyError}`, () => {
       error = new FailedDependencyError('FailedDependencyError');
       const result: number = error.code;
-      if (result !== ErrorCodes.FailedDependencyError) {
-        throw new Error(`Expected error Code ${ErrorCodes.FailedDependencyError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.FailedDependencyError);
     });
   });
 
@@ -192,9 +186,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.ForbiddenError}`, () => {
       error = new ForbiddenError('ForbiddenError');
       const result: number = error.code;
-      if (result !== ErrorCodes.ForbiddenError) {
-        throw new Error(`Expected error Code ${ErrorCodes.ForbiddenError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.ForbiddenError);
     });
   });
 
@@ -202,9 +194,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.GoneError}`, () => {
       error = new GoneError('GoneError');
       const result: number = error.code;
-      if (result !== ErrorCodes.GoneError) {
-        throw new Error(`Expected error Code ${ErrorCodes.GoneError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.GoneError);
     });
   });
 
@@ -212,9 +202,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.ImATeapotError}`, () => {
       error = new ImATeapotError('ImATeapotError');
       const result: number = error.code;
-      if (result !== ErrorCodes.ImATeapotError) {
-        throw new Error(`Expected error Code ${ErrorCodes.ImATeapotError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.ImATeapotError);
     });
   });
 
@@ -222,9 +210,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.LengthRequiredError}`, () => {
       error = new LengthRequiredError('LengthRequiredError');
       const result: number = error.code;
-      if (result !== ErrorCodes.LengthRequiredError) {
-        throw new Error(`Expected error Code ${ErrorCodes.LengthRequiredError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.LengthRequiredError);
     });
   });
 
@@ -232,9 +218,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.LockedError}`, () => {
       error = new LockedError('LockedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.LockedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.LockedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.LockedError);
     });
   });
 
@@ -242,9 +226,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.MethodNotAllowedError}`, () => {
       error = new MethodNotAllowedError('MethodNotAllowedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.MethodNotAllowedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.MethodNotAllowedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.MethodNotAllowedError);
     });
   });
 
@@ -252,9 +234,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.MisdirectedRequestError}`, () => {
       error = new MisdirectedRequestError('MisdirectedRequestError');
       const result: number = error.code;
-      if (result !== ErrorCodes.MisdirectedRequestError) {
-        throw new Error(`Expected error Code ${ErrorCodes.MisdirectedRequestError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.MisdirectedRequestError);
     });
   });
 
@@ -262,9 +242,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.NotAcceptableError}`, () => {
       error = new NotAcceptableError('NotAcceptableError');
       const result: number = error.code;
-      if (result !== ErrorCodes.NotAcceptableError) {
-        throw new Error(`Expected error Code ${ErrorCodes.NotAcceptableError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.NotAcceptableError);
     });
   });
 
@@ -272,9 +250,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.NotFoundError}`, () => {
       error = new NotFoundError('NotFoundError');
       const result: number = error.code;
-      if (result !== ErrorCodes.NotFoundError) {
-        throw new Error(`Expected error Code ${ErrorCodes.NotFoundError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.NotFoundError);
     });
   });
 
@@ -282,9 +258,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.PaymentRequiredError}`, () => {
       error = new PaymentRequiredError('PaymentRequiredError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PaymentRequiredError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PaymentRequiredError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PaymentRequiredError);
     });
   });
 
@@ -292,9 +266,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.PolicyNotFulfilledError}`, () => {
       error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PolicyNotFulfilledError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PolicyNotFulfilledError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PolicyNotFulfilledError);
     });
   });
 
@@ -302,9 +274,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
       error = new PreconditionFailedError('PreconditionFailedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PreconditionFailedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PreconditionFailedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PreconditionFailedError);
     });
   });
 });
