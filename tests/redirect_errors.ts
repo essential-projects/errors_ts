@@ -1,7 +1,6 @@
-import 'mocha';
-
 import {
   BaseError,
+  ErrorCodes,
   FoundError,
   MovedError,
   MultipleChoicesError,
@@ -12,7 +11,8 @@ import {
   UseProxyError,
 } from '../src/index';
 
-import {ErrorCodes} from '../src/error_codes';
+import 'mocha';
+import * as should from 'should';
 
 let error: BaseError;
 
@@ -21,9 +21,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.FoundError}`, () => {
       error = new FoundError('FoundError');
       const result: number = error.code;
-      if (result !== ErrorCodes.FoundError) {
-        throw new Error(`Expected error Code ${ErrorCodes.FoundError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.FoundError);
     });
   });
 
@@ -31,9 +29,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.MovedError}`, () => {
       error = new MovedError('MovedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.MovedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.MovedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.MovedError);
     });
   });
 
@@ -41,9 +37,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.MultipleChoicesError}`, () => {
       error = new MultipleChoicesError('MultipleChoicesError');
       const result: number = error.code;
-      if (result !== ErrorCodes.MultipleChoicesError) {
-        throw new Error(`Expected error Code ${ErrorCodes.MultipleChoicesError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.MultipleChoicesError);
     });
   });
 
@@ -51,9 +45,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.NotModifiedError}`, () => {
       error = new NotModifiedError('NotModifiedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.NotModifiedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.NotModifiedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.NotModifiedError);
     });
   });
 
@@ -61,9 +53,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.PermanentRedirectError}`, () => {
       error = new PermanentRedirectError('PermanentRedirectError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PermanentRedirectError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PermanentRedirectError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PermanentRedirectError);
     });
   });
 
@@ -71,9 +61,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.SeeOtherError}`, () => {
       error = new SeeOtherError('SeeOtherError');
       const result: number = error.code;
-      if (result !== ErrorCodes.SeeOtherError) {
-        throw new Error(`Expected error Code ${ErrorCodes.SeeOtherError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.SeeOtherError);
     });
   });
 
@@ -81,9 +69,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.TemporaryRedirectError}`, () => {
       error = new TemporaryRedirectError('TemporaryRedirectError');
       const result: number = error.code;
-      if (result !== ErrorCodes.TemporaryRedirectError) {
-        throw new Error(`Expected error Code ${ErrorCodes.TemporaryRedirectError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.TemporaryRedirectError);
     });
   });
 
@@ -91,9 +77,7 @@ describe('redirect_errors', () => {
     it(`should return ${ErrorCodes.UseProxyError}`, () => {
       error = new UseProxyError('UseProxyError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UseProxyError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UseProxyError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.UseProxyError);
     });
   });
 });
