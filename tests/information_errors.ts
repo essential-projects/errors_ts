@@ -1,33 +1,38 @@
 import {
+  BaseError,
   ContinueError,
   ErrorCodes,
   ProcessingError,
   SwitchingProtocolsError,
 } from '../src/index';
 
-import {expect} from 'chai';
 import 'mocha';
+import * as should from 'should';
 
-describe('ContinueError', () => {
-  it(`should return ${ErrorCodes.ContinueError}`, () => {
-    const continueError: ContinueError = new ContinueError('ContinueError');
-    const result: number = continueError.code;
-    expect(result).to.equal(ErrorCodes.ContinueError);
+let error: BaseError;
+
+describe('information_errors', () => {
+  describe('ContinueError', () => {
+    it(`should return ${ErrorCodes.ContinueError}`, () => {
+      error = new ContinueError('ContinueError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.ContinueError);
+    });
   });
-});
 
-describe('ProcessingError', () => {
-  it(`should return ${ErrorCodes.ProcessingError}`, () => {
-    const processingError: ProcessingError = new ProcessingError('ProcessingError');
-    const result: number = processingError.code;
-    expect(result).to.equal(ErrorCodes.ProcessingError);
+  describe('ProcessingError', () => {
+    it(`should return ${ErrorCodes.ProcessingError}`, () => {
+      error = new ProcessingError('ProcessingError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.ProcessingError);
+    });
   });
-});
 
-describe('Switching Protocols Error', () => {
-  it(`should return ${ErrorCodes.SwitchingProtocolsError}`, () => {
-    const switchingProtocolsError: SwitchingProtocolsError = new SwitchingProtocolsError('SwitchingProtocolsError');
-    const result: number = switchingProtocolsError.code;
-    expect(result).to.equal(ErrorCodes.SwitchingProtocolsError);
+  describe('Switching Protocols Error', () => {
+    it(`should return ${ErrorCodes.SwitchingProtocolsError}`, () => {
+      error = new SwitchingProtocolsError('SwitchingProtocolsError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.SwitchingProtocolsError);
+    });
   });
 });
