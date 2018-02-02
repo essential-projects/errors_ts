@@ -1,5 +1,3 @@
-import 'mocha';
-
 import {
   BadRequestError,
   BaseError,
@@ -34,6 +32,9 @@ import {
   URLTooLongError,
 } from '../src/index';
 
+import 'mocha';
+import * as should from 'should';
+
 let error: BaseError;
 
 describe('client_errors', () => {
@@ -41,9 +42,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
       error = new PreconditionFailedError('PreconditionFailedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PreconditionFailedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PreconditionFailedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PreconditionFailedError);
     });
   });
 
@@ -51,9 +50,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.PreconditionRequiredError}`, () => {
       error = new PreconditionRequiredError('PreconditionRequiredError');
       const result: number = error.code;
-      if (result !== ErrorCodes.PreconditionRequiredError) {
-        throw new Error(`Expected error Code ${ErrorCodes.PreconditionRequiredError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.PreconditionRequiredError);
     });
   });
 
@@ -61,9 +58,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.ProxyAuthenticationRequiredError}`, () => {
       error = new ProxyAuthenticationRequiredError('ProxyAuthenticationRequiredError');
       const result: number = error.code;
-      if (result !== ErrorCodes.ProxyAuthenticationRequiredError) {
-        throw new Error(`Expected error Code ${ErrorCodes.ProxyAuthenticationRequiredError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.ProxyAuthenticationRequiredError);
     });
   });
 
@@ -71,9 +66,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.RequestHeaderTooLargeError}`, () => {
       error = new RequestHeaderTooLargeError('RequestHeaderTooLargeError');
       const result: number = error.code;
-      if (result !== ErrorCodes.RequestHeaderTooLargeError) {
-        throw new Error(`Expected error Code ${ErrorCodes.RequestHeaderTooLargeError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.RequestHeaderTooLargeError);
     });
   });
 
@@ -81,9 +74,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.RequestTimeoutError}`, () => {
       error = new RequestTimeoutError('RequestTimeoutError');
       const result: number = error.code;
-      if (result !== ErrorCodes.RequestTimeoutError) {
-        throw new Error(`Expected error Code ${ErrorCodes.RequestTimeoutError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.RequestTimeoutError);
     });
   });
 
@@ -91,9 +82,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.RequestTooLargeError}`, () => {
       error = new RequestTooLargeError('RequestTooLargeError');
       const result: number = error.code;
-      if (result !== ErrorCodes.RequestTooLargeError) {
-        throw new Error(`Expected error Code ${ErrorCodes.RequestTooLargeError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.RequestTooLargeError);
     });
   });
 
@@ -101,9 +90,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.RequestedRangeNotSatisfiableError}`, () => {
       error = new RequestedRangeNotSatisfiableError('RequestedRangeNotSatisfiableError');
       const result: number = error.code;
-      if (result !== ErrorCodes.RequestedRangeNotSatisfiableError) {
-        throw new Error(`Expected error Code ${ErrorCodes.RequestedRangeNotSatisfiableError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.RequestedRangeNotSatisfiableError);
     });
   });
 
@@ -111,9 +98,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.TooManyRequestsError}`, () => {
       error = new TooManyRequestsError('TooManyRequestsError');
       const result: number = error.code;
-      if (result !== ErrorCodes.TooManyRequestsError) {
-        throw new Error(`Expected error Code ${ErrorCodes.TooManyRequestsError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.TooManyRequestsError);
     });
   });
 
@@ -121,9 +106,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.UnauthorizedError}`, () => {
       error = new UnauthorizedError('UnauthorizedError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UnauthorizedError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UnauthorizedError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.UnauthorizedError);
     });
   });
 
@@ -131,9 +114,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.UnavaliableForLegalReasonsError}`, () => {
       error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UnavaliableForLegalReasonsError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UnavaliableForLegalReasonsError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.UnavaliableForLegalReasonsError);
     });
   });
 
@@ -141,9 +122,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.UnprocessableEntityError}`, () => {
       error = new UnprocessableEntityError('UnprocessableEntityError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UnprocessableEntityError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UnprocessableEntityError} but was ${result}.`);
-    }
+      should(result).be.equal(ErrorCodes.UnprocessableEntityError);
     });
   });
 
@@ -151,9 +130,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.UnsupportedMediaTypeError}`, () => {
       error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UnsupportedMediaTypeError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UnsupportedMediaTypeError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.UnsupportedMediaTypeError);
     });
   });
 
@@ -161,9 +138,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.UpgradeRequiredError}`, () => {
       error = new UpgradeRequiredError('UpgradeRequiredError');
       const result: number = error.code;
-      if (result !== ErrorCodes.UpgradeRequiredError) {
-        throw new Error(`Expected error Code ${ErrorCodes.UpgradeRequiredError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.UpgradeRequiredError);
     });
   });
 
@@ -171,9 +146,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.URLTooLongError}`, () => {
       error = new URLTooLongError('URLTooLongError');
       const result: number = error.code;
-      if (result !== ErrorCodes.URLTooLongError) {
-        throw new Error(`Expected error Code ${ErrorCodes.URLTooLongError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.URLTooLongError);
     });
   });
 
@@ -181,9 +154,7 @@ describe('client_errors', () => {
     it(`should return ${ErrorCodes.BadRequestError}`, () => {
       error = new BadRequestError('BadRequestError');
       const result: number = error.code;
-      if (result !== ErrorCodes.BadRequestError) {
-        throw new Error(`Expected error Code ${ErrorCodes.BadRequestError} but was ${result}.`);
-      }
+      should(result).be.equal(ErrorCodes.BadRequestError);
     });
   });
 
