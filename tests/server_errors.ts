@@ -1,10 +1,8 @@
-import {expect} from 'chai';
-import 'mocha';
-
 import {
   BadGatewayError,
   BandwithLimitExceededError,
   BaseError,
+  ErrorCodes,
   GatewayTimeoutError,
   InsufficientStorageError,
   InternalServerError,
@@ -15,97 +13,89 @@ import {
   VersionNotSupportedError,
 } from '../src/index';
 
-import {ErrorCodes} from '../src/error_codes';
+import 'mocha';
+import * as should from 'should';
 
 let error: BaseError;
-let errorCode: number;
 
-error = new BadGatewayError('BadGatewayError');
-errorCode = ErrorCodes.BadGatewayError;
-describe('BadGatewayError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+describe('server_errors', () => {
+  describe('BadGatewayError', () => {
+    it(`should return ${ErrorCodes.BadGatewayError}`, () => {
+      error = new BadGatewayError('BadGatewayError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.BadGatewayError);
+    });
   });
-});
 
-error = new BandwithLimitExceededError('BandwithLimitExceededError');
-errorCode = ErrorCodes.BandwithLimitExceededError;
-describe('BandwithLimitExceededError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('BandwithLimitExceededError', () => {
+    it(`should return ${ErrorCodes.BandwithLimitExceededError}`, () => {
+      error = new BandwithLimitExceededError('BandwithLimitExceededError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.BandwithLimitExceededError);
+    });
   });
-});
 
-error = new GatewayTimeoutError('GatewayTimeoutError');
-errorCode = ErrorCodes.GatewayTimeoutError;
-describe('GatewayTimeoutError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('GatewayTimeoutError', () => {
+    it(`should return ${ErrorCodes.GatewayTimeoutError}`, () => {
+      error = new GatewayTimeoutError('GatewayTimeoutError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.GatewayTimeoutError);
+    });
   });
-});
 
-error = new InsufficientStorageError('InsufficientStorageError');
-errorCode = ErrorCodes.InsufficientStorageError;
-describe('InsufficientStorageError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('InsufficientStorageError', () => {
+    it(`should return ${ErrorCodes.InsufficientStorageError}`, () => {
+      error = new InsufficientStorageError('InsufficientStorageError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.InsufficientStorageError);
+    });
   });
-});
 
-error = new InternalServerError('InternalServerError');
-errorCode = ErrorCodes.InternalServerError;
-describe('InternalServerError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('InternalServerError', () => {
+    it(`should return ${ErrorCodes.InternalServerError}`, () => {
+        error = new InternalServerError('InternalServerError');
+        const result: number = error.code;
+        should(result).be.equal(ErrorCodes.InternalServerError);
+    });
   });
-});
 
-error = new LoopDetectedError('LoopDetectedError');
-errorCode = ErrorCodes.LoopDetectedError;
-describe('LoopDetectedError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('LoopDetectedError', () => {
+    it(`should return ${ErrorCodes.LoopDetectedError}`, () => {
+      error = new LoopDetectedError('LoopDetectedError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.LoopDetectedError);
+    });
   });
-});
 
-error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
-errorCode = ErrorCodes.NetworkAuthenticationRequiredError;
-describe('NetworkAuthenticationRequiredError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('NetworkAuthenticationRequiredError', () => {
+    it(`should return ${ErrorCodes.NetworkAuthenticationRequiredError}`, () => {
+      error = new NetworkAuthenticationRequiredError('NetworkAuthenticationRequiredError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.NetworkAuthenticationRequiredError);
+    });
   });
-});
 
-error = new NotImplementedError('NotImplementedError');
-errorCode = ErrorCodes.NotImplementedError;
-describe('NotImplementedError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('NotImplementedError', () => {
+    it(`should return ${ErrorCodes.NotImplementedError}`, () => {
+      error = new NotImplementedError('NotImplementedError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.NotImplementedError);
+    });
   });
-});
 
-error = new ServiceUnavaliableError('ServiceUnavaliableError');
-errorCode = ErrorCodes.ServiceUnavaliableError;
-describe('ServiceUnavaliableError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('ServiceUnavaliableError', () => {
+    it(`should return ${ErrorCodes.ServiceUnavaliableError}`, () => {
+      error = new ServiceUnavaliableError('ServiceUnavaliableError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.ServiceUnavaliableError);
+    });
   });
-});
 
-error = new VersionNotSupportedError('VersionNotSupportedError');
-errorCode = ErrorCodes.VersionNotSupportedError;
-describe('VersionNotSupportedError', () => {
-  it(`should return ${errorCode}`, () => {
-    const result: number = error.code;
-    expect(result).to.equal(errorCode);
+  describe('VersionNotSupportedError', () => {
+    it(`should return ${ErrorCodes.VersionNotSupportedError}`, () => {
+      error = new VersionNotSupportedError('VersionNotSupportedError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.VersionNotSupportedError);
+    });
   });
 });
