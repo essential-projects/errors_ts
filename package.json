@@ -16,7 +16,6 @@
   "homepage": "https://github.com/essential-projects/errors_ts#readme",
   "devDependencies": {
     "@essential-projects/tslint-config": "^1.0.0-rc3",
-    "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.47",
     "gulp": "^3.9.1",
     "gulptraum": "^2.2.4",
