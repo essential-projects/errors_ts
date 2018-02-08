@@ -26,6 +26,11 @@ pipeline {
   stages {
     stage('prepare') {
       steps {
+        script {
+          rawPackageVersion = sh returnStdout: true, script: 'node --print --eval "require(\'./package.json\').version"'
+          PACKAGE_VERSION = rawPackageVersion.trim()
+          echo "Package version is '" + PACKAGE_VERSION + "'"
+        }
         sh 'node --version'
         sh 'npm install --ignore-scripts'
       }
@@ -51,10 +56,24 @@ pipeline {
       }
     }
     stage('publish') {
+      // Check if the build is trigged by a new git commit;
+      // if this is a new commit, publish to NPM.
       when {
-        branch 'master'
+        allOf {
+          branch 'master'
+          expression {
+            env.GIT_PREVIOUS_COMMIT != env.GIT_COMMIT
+          }
+        }
       }
       steps {
+        // let the build fail if the version does not match normal semver
+        script {
+          def normalVersion = PACKAGE_VERSION =~ /\d+\.\d+\.\d+/
+          if (!normalVersion.matches()) {
+            error('Only non RC Versions are allowed in master')
+          }
+        }
         nodejs(configId: 'process-engine-ci-token', nodeJSInstallationName: 'node-lts') {
           sh 'node --version'
           sh 'npm publish --ignore-scripts'
