@@ -1,6 +1,6 @@
 {
   "name": "@essential-projects/errors_ts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Technical errors that the protocol-adapters can handle",
   "main": "dist/commonjs/index.js",
   "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/essential-projects/errors_ts#readme",
   "devDependencies": {
-    "@essential-projects/tslint-config": "^1.0.0-rc3",
+    "@essential-projects/tslint-config": "^1.0.0",
     "@types/mocha": "^2.2.47",
     "gulp": "^3.9.1",
     "gulptraum": "^2.2.4",
