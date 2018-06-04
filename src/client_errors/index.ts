@@ -1,3 +1,4 @@
+export * from './authentication_timeout';
 export * from './bad_request';
 export * from './conflict';
 export * from './expectation_failed';

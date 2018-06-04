@@ -1,4 +1,5 @@
 import {
+  AuthenticationTimeoutError,
   BadRequestError,
   BaseError,
   ConflictError,
@@ -38,6 +39,14 @@ import * as should from 'should';
 let error: BaseError;
 
 describe('client_errors', () => {
+  describe('AuthenticationFailedError', () => {
+    it(`should return ${ErrorCodes.AuthenticationTimeoutError}`, () => {
+      error = new AuthenticationTimeoutError('AuthenticationTimeoutError');
+      const result: number = error.code;
+      should(result).be.equal(ErrorCodes.AuthenticationTimeoutError);
+    });
+  });
+
   describe('PreconditionFailedError', () => {
     it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
       error = new PreconditionFailedError('PreconditionFailedError');
