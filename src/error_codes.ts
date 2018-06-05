@@ -33,6 +33,7 @@ export enum ErrorCodes {
   RequestedRangeNotSatisfiableError = 416,
   ExpectationFailedError = 417,
   ImATeapotError = 418,
+  AuthenticationTimeoutError = 419,
   PolicyNotFulfilledError = 420,
   MisdirectedRequestError = 421,
   UnprocessableEntityError = 422,
