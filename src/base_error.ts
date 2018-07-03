@@ -1,7 +1,4 @@
-import {Logger} from 'loggerhythm';
 import * as errorClasses from './index';
-
-const logger: Logger = Logger.createLogger('essential-projects-errors');
 
 export class BaseError extends Error {
   protected _code: number;
@@ -91,8 +88,6 @@ export class BaseError extends Error {
         // tslint:disable-next-line:max-line-length
         throw new Error(`Method 'serialize' was called on an error that extends an essential-projects BaseError, but no known essential-projects error was found in its prototype-chain. THIS SHOULD NEVER HAPPEN! Are you using mutliple versions of @essential-projects/errors_ts in your project?`);
       }
-
-      logger.info(`Derived error '${this.constructor.name}' will be serialized as '${essentialProjectsErrorName}'`);
     }
 
     return JSON.stringify({
