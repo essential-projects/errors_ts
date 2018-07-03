@@ -1,4 +1,5 @@
-import {BaseError, ErrorCodes} from '../index';
+import {BaseError} from './../base_error';
+import {ErrorCodes} from './../error_codes';
 
 export class AuthenticationTimeoutError extends BaseError {
 
