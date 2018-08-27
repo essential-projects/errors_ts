@@ -8,9 +8,10 @@ export class BaseError extends Error {
     super(message);
     this._code = code;
     this.name = this.constructor.name;
-    // Only capture the error stacktrace if the method is available.
+    
     // Currently, Firefox and Safari do not support the stack method.
-    if (Error.captureStackTrace) {
+    const captureStackTraceMethodAvailable = Error.captureStackTrace !== undefined;
+    if (captureStackTraceMethodAvailable) {
       Error.captureStackTrace(this, this.constructor);
     }
   }
