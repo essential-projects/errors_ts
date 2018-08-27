@@ -12,7 +12,11 @@ export class BaseError extends Error {
     // Currently, Firefox and Safari do not support the stack method.
     const captureStackTraceMethodAvailable: boolean = Error.captureStackTrace !== undefined;
     if (captureStackTraceMethodAvailable) {
+      // For NodeJS and Chrome
       Error.captureStackTrace(this, this.constructor);
+    } else {
+      // Fallback for others like Firefox, IE 10+, Safari etc.
+      this.stack = (new Error()).stack || '';
     }
   }
 
