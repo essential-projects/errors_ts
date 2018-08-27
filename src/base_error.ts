@@ -8,7 +8,11 @@ export class BaseError extends Error {
     super(message);
     this._code = code;
     this.name = this.constructor.name;
-    Error.captureStackTrace(this, this.constructor);
+    // Only capture the error stacktrace if the method is available.
+    // Currently, Firefox and Safari do not support the stack method.
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
+    }
   }
 
   public static deserialize(serializedError: string): BaseError {
