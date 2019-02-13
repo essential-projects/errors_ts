@@ -1,6 +1,6 @@
 {
   "name": "@essential-projects/errors_ts",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Technical errors that the protocol-adapters can handle",
   "main": "dist/commonjs/index.js",
   "typings": "dist/index.d.ts",
