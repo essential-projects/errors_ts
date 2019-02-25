@@ -10,7 +10,9 @@ export class BaseError extends Error {
     this.name = this.constructor.name;
 
     // Currently, Firefox and Safari do not support the stack method.
-    const captureStackTraceMethodAvailable: boolean = Error.captureStackTrace !== undefined;
+    // NOTE: We need that cast to any, otherwise the Builds in Jenkins will fail.
+    // This is because the environment on Jenkins apparently doesn't recognize this property.
+    const captureStackTraceMethodAvailable: boolean = (Error as any).captureStackTrace !== undefined;
     if (captureStackTraceMethodAvailable) {
       // For NodeJS and Chrome
       Error.captureStackTrace(this, this.constructor);
