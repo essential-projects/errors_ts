@@ -46,7 +46,7 @@ export class BaseError extends Error {
       throw new Error(`Error while deserializing an essential-projects-error: ${errorInfo.errorClassName} is not a known essential-projects-error`);
     }
 
-    const errorClass: BaseError = new errorClasses[errorInfo.errorClassName](errorInfo.code, errorInfo.message);
+    const errorClass: BaseError = new errorClasses[errorInfo.errorClassName](errorInfo.message);
     errorClass.stack = errorInfo.callStack;
     errorClass.additionalInformation = errorInfo.additionalInformation;
 
