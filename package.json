@@ -37,7 +37,7 @@
     "prepare": "npm run build",
     "lint": "eslint  src/**/*.ts src/*.ts",
     "lint-fix": "eslint --fix  src/**/*.ts src/*.ts",
-    "test": "mocha -r ts-node/register tests/index.ts"
+    "test": "mocha -r ts-node/register tests/*.ts"
   },
   "dependencies": {}
 }
