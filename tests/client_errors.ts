@@ -1,7 +1,9 @@
+import 'mocha';
+import * as should from 'should';
+
 import {
   AuthenticationTimeoutError,
   BadRequestError,
-  BaseError,
   ConflictError,
   ErrorCodes,
   ExpectationFailedError,
@@ -20,270 +22,234 @@ import {
   PreconditionFailedError,
   PreconditionRequiredError,
   ProxyAuthenticationRequiredError,
-  RequestedRangeNotSatisfiableError,
   RequestHeaderTooLargeError,
   RequestTimeoutError,
   RequestTooLargeError,
+  RequestedRangeNotSatisfiableError,
   TooManyRequestsError,
+  URLTooLongError,
   UnauthorizedError,
   UnavaliableForLegalReasonsError,
   UnprocessableEntityError,
   UnsupportedMediaTypeError,
   UpgradeRequiredError,
-  URLTooLongError,
 } from '../src/index';
 
-import 'mocha';
-import * as should from 'should';
-
-let error: BaseError;
-
-describe('client_errors', () => {
-  describe('AuthenticationFailedError', () => {
-    it(`should return ${ErrorCodes.AuthenticationTimeoutError}`, () => {
-      error = new AuthenticationTimeoutError('AuthenticationTimeoutError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.AuthenticationTimeoutError);
+describe('client_errors', (): void => {
+  describe('AuthenticationFailedError', (): void => {
+    it(`should return ${ErrorCodes.AuthenticationTimeoutError}`, (): void => {
+      const error = new AuthenticationTimeoutError('AuthenticationTimeoutError');
+      should(error.code).be.equal(ErrorCodes.AuthenticationTimeoutError);
     });
   });
 
-  describe('PreconditionFailedError', () => {
-    it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
-      error = new PreconditionFailedError('PreconditionFailedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.PreconditionFailedError);
+  describe('PreconditionFailedError', (): void => {
+    it(`should return ${ErrorCodes.PreconditionFailedError}`, (): void => {
+      const error = new PreconditionFailedError('PreconditionFailedError');
+      should(error.code).be.equal(ErrorCodes.PreconditionFailedError);
     });
   });
 
-  describe('PreconditionRequiredError', () => {
-    it(`should return ${ErrorCodes.PreconditionRequiredError}`, () => {
-      error = new PreconditionRequiredError('PreconditionRequiredError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.PreconditionRequiredError);
+  describe('PreconditionRequiredError', (): void => {
+    it(`should return ${ErrorCodes.PreconditionRequiredError}`, (): void => {
+      const error = new PreconditionRequiredError('PreconditionRequiredError');
+      should(error.code).be.equal(ErrorCodes.PreconditionRequiredError);
     });
   });
 
-  describe('ProxyAuthenticationRequiredError', () => {
-    it(`should return ${ErrorCodes.ProxyAuthenticationRequiredError}`, () => {
-      error = new ProxyAuthenticationRequiredError('ProxyAuthenticationRequiredError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.ProxyAuthenticationRequiredError);
+  describe('ProxyAuthenticationRequiredError', (): void => {
+    it(`should return ${ErrorCodes.ProxyAuthenticationRequiredError}`, (): void => {
+      const error = new ProxyAuthenticationRequiredError('ProxyAuthenticationRequiredError');
+      should(error.code).be.equal(ErrorCodes.ProxyAuthenticationRequiredError);
     });
   });
 
-  describe('RequestHeaderTooLargeError', () => {
-    it(`should return ${ErrorCodes.RequestHeaderTooLargeError}`, () => {
-      error = new RequestHeaderTooLargeError('RequestHeaderTooLargeError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.RequestHeaderTooLargeError);
+  describe('RequestHeaderTooLargeError', (): void => {
+    it(`should return ${ErrorCodes.RequestHeaderTooLargeError}`, (): void => {
+      const error = new RequestHeaderTooLargeError('RequestHeaderTooLargeError');
+      should(error.code).be.equal(ErrorCodes.RequestHeaderTooLargeError);
     });
   });
 
-  describe('RequestTimeoutError', () => {
-    it(`should return ${ErrorCodes.RequestTimeoutError}`, () => {
-      error = new RequestTimeoutError('RequestTimeoutError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.RequestTimeoutError);
+  describe('RequestTimeoutError', (): void => {
+    it(`should return ${ErrorCodes.RequestTimeoutError}`, (): void => {
+      const error = new RequestTimeoutError('RequestTimeoutError');
+      should(error.code).be.equal(ErrorCodes.RequestTimeoutError);
     });
   });
 
-  describe('RequestTooLargeError', () => {
-    it(`should return ${ErrorCodes.RequestTooLargeError}`, () => {
-      error = new RequestTooLargeError('RequestTooLargeError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.RequestTooLargeError);
+  describe('RequestTooLargeError', (): void => {
+    it(`should return ${ErrorCodes.RequestTooLargeError}`, (): void => {
+      const error = new RequestTooLargeError('RequestTooLargeError');
+      should(error.code).be.equal(ErrorCodes.RequestTooLargeError);
     });
   });
 
-  describe('RequestedRangeNotSatisfiableError', () => {
-    it(`should return ${ErrorCodes.RequestedRangeNotSatisfiableError}`, () => {
-      error = new RequestedRangeNotSatisfiableError('RequestedRangeNotSatisfiableError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.RequestedRangeNotSatisfiableError);
+  describe('RequestedRangeNotSatisfiableError', (): void => {
+    it(`should return ${ErrorCodes.RequestedRangeNotSatisfiableError}`, (): void => {
+      const error = new RequestedRangeNotSatisfiableError('RequestedRangeNotSatisfiableError');
+      should(error.code).be.equal(ErrorCodes.RequestedRangeNotSatisfiableError);
     });
   });
 
-  describe('TooManyRequestsError', () => {
-    it(`should return ${ErrorCodes.TooManyRequestsError}`, () => {
-      error = new TooManyRequestsError('TooManyRequestsError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.TooManyRequestsError);
+  describe('TooManyRequestsError', (): void => {
+    it(`should return ${ErrorCodes.TooManyRequestsError}`, (): void => {
+      const error = new TooManyRequestsError('TooManyRequestsError');
+      should(error.code).be.equal(ErrorCodes.TooManyRequestsError);
     });
   });
 
-  describe('UnauthorizedError', () => {
-    it(`should return ${ErrorCodes.UnauthorizedError}`, () => {
-      error = new UnauthorizedError('UnauthorizedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.UnauthorizedError);
+  describe('UnauthorizedError', (): void => {
+    it(`should return ${ErrorCodes.UnauthorizedError}`, (): void => {
+      const error = new UnauthorizedError('UnauthorizedError');
+      should(error.code).be.equal(ErrorCodes.UnauthorizedError);
     });
   });
 
-  describe('UnavaliableForLegalReasonsError', () => {
-    it(`should return ${ErrorCodes.UnavaliableForLegalReasonsError}`, () => {
-      error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.UnavaliableForLegalReasonsError);
+  describe('UnavaliableForLegalReasonsError', (): void => {
+    it(`should return ${ErrorCodes.UnavaliableForLegalReasonsError}`, (): void => {
+      const error = new UnavaliableForLegalReasonsError('UnavaliableForLegalReasonsError');
+      should(error.code).be.equal(ErrorCodes.UnavaliableForLegalReasonsError);
     });
   });
 
-  describe('UnprocessableEntityError', () => {
-    it(`should return ${ErrorCodes.UnprocessableEntityError}`, () => {
-      error = new UnprocessableEntityError('UnprocessableEntityError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.UnprocessableEntityError);
+  describe('UnprocessableEntityError', (): void => {
+    it(`should return ${ErrorCodes.UnprocessableEntityError}`, (): void => {
+      const error = new UnprocessableEntityError('UnprocessableEntityError');
+      should(error.code).be.equal(ErrorCodes.UnprocessableEntityError);
     });
   });
 
-  describe('UnsupportedMediaTypeError', () => {
-    it(`should return ${ErrorCodes.UnsupportedMediaTypeError}`, () => {
-      error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.UnsupportedMediaTypeError);
+  describe('UnsupportedMediaTypeError', (): void => {
+    it(`should return ${ErrorCodes.UnsupportedMediaTypeError}`, (): void => {
+      const error = new UnsupportedMediaTypeError('UnsupportedMediaTypeError');
+      should(error.code).be.equal(ErrorCodes.UnsupportedMediaTypeError);
     });
   });
 
-  describe('UpgradeRequiredError', () => {
-    it(`should return ${ErrorCodes.UpgradeRequiredError}`, () => {
-      error = new UpgradeRequiredError('UpgradeRequiredError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.UpgradeRequiredError);
+  describe('UpgradeRequiredError', (): void => {
+    it(`should return ${ErrorCodes.UpgradeRequiredError}`, (): void => {
+      const error = new UpgradeRequiredError('UpgradeRequiredError');
+      should(error.code).be.equal(ErrorCodes.UpgradeRequiredError);
     });
   });
 
-  describe('URLTooLongError', () => {
-    it(`should return ${ErrorCodes.URLTooLongError}`, () => {
-      error = new URLTooLongError('URLTooLongError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.URLTooLongError);
+  describe('URLTooLongError', (): void => {
+    it(`should return ${ErrorCodes.URLTooLongError}`, (): void => {
+      const error = new URLTooLongError('URLTooLongError');
+      should(error.code).be.equal(ErrorCodes.URLTooLongError);
     });
   });
 
-  describe('Bad Request Error', () => {
-    it(`should return ${ErrorCodes.BadRequestError}`, () => {
-      error = new BadRequestError('BadRequestError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.BadRequestError);
+  describe('Bad Request Error', (): void => {
+    it(`should return ${ErrorCodes.BadRequestError}`, (): void => {
+      const error = new BadRequestError('BadRequestError');
+      should(error.code).be.equal(ErrorCodes.BadRequestError);
     });
   });
 
-  describe('Conflict Error', () => {
-    it(`should return ${ErrorCodes.ConflictError}`, () => {
-      error = new ConflictError('ConflictError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.ConflictError);
+  describe('Conflict Error', (): void => {
+    it(`should return ${ErrorCodes.ConflictError}`, (): void => {
+      const error = new ConflictError('ConflictError');
+      should(error.code).be.equal(ErrorCodes.ConflictError);
     });
   });
 
-  describe('Expectation Failed Error', () => {
-    it(`should return ${ErrorCodes.ExpectationFailedError}`, () => {
-      error = new ExpectationFailedError('ExpectationFailedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.ExpectationFailedError);
+  describe('Expectation Failed Error', (): void => {
+    it(`should return ${ErrorCodes.ExpectationFailedError}`, (): void => {
+      const error = new ExpectationFailedError('ExpectationFailedError');
+      should(error.code).be.equal(ErrorCodes.ExpectationFailedError);
     });
   });
 
-  describe('Failed Dependency Error', () => {
-    it(`should return ${ErrorCodes.FailedDependencyError}`, () => {
-      error = new FailedDependencyError('FailedDependencyError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.FailedDependencyError);
+  describe('Failed Dependency Error', (): void => {
+    it(`should return ${ErrorCodes.FailedDependencyError}`, (): void => {
+      const error = new FailedDependencyError('FailedDependencyError');
+      should(error.code).be.equal(ErrorCodes.FailedDependencyError);
     });
   });
 
-  describe('Forbidden Error', () => {
-    it(`should return ${ErrorCodes.ForbiddenError}`, () => {
-      error = new ForbiddenError('ForbiddenError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.ForbiddenError);
+  describe('Forbidden Error', (): void => {
+    it(`should return ${ErrorCodes.ForbiddenError}`, (): void => {
+      const error = new ForbiddenError('ForbiddenError');
+      should(error.code).be.equal(ErrorCodes.ForbiddenError);
     });
   });
 
-  describe('Gone Error', () => {
-    it(`should return ${ErrorCodes.GoneError}`, () => {
-      error = new GoneError('GoneError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.GoneError);
+  describe('Gone Error', (): void => {
+    it(`should return ${ErrorCodes.GoneError}`, (): void => {
+      const error = new GoneError('GoneError');
+      should(error.code).be.equal(ErrorCodes.GoneError);
     });
   });
 
-  describe('Im a Teapot Error', () => {
-    it(`should return ${ErrorCodes.ImATeapotError}`, () => {
-      error = new ImATeapotError('ImATeapotError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.ImATeapotError);
+  describe('Im a Teapot Error', (): void => {
+    it(`should return ${ErrorCodes.ImATeapotError}`, (): void => {
+      const error = new ImATeapotError('ImATeapotError');
+      should(error.code).be.equal(ErrorCodes.ImATeapotError);
     });
   });
 
-  describe('Length Required Error', () => {
-    it(`should return ${ErrorCodes.LengthRequiredError}`, () => {
-      error = new LengthRequiredError('LengthRequiredError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.LengthRequiredError);
+  describe('Length Required Error', (): void => {
+    it(`should return ${ErrorCodes.LengthRequiredError}`, (): void => {
+      const error = new LengthRequiredError('LengthRequiredError');
+      should(error.code).be.equal(ErrorCodes.LengthRequiredError);
     });
   });
 
-  describe('Locked Error', () => {
-    it(`should return ${ErrorCodes.LockedError}`, () => {
-      error = new LockedError('LockedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.LockedError);
+  describe('Locked Error', (): void => {
+    it(`should return ${ErrorCodes.LockedError}`, (): void => {
+      const error = new LockedError('LockedError');
+      should(error.code).be.equal(ErrorCodes.LockedError);
     });
   });
 
-  describe('Method Not Allowed Error', () => {
-    it(`should return ${ErrorCodes.MethodNotAllowedError}`, () => {
-      error = new MethodNotAllowedError('MethodNotAllowedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.MethodNotAllowedError);
+  describe('Method Not Allowed Error', (): void => {
+    it(`should return ${ErrorCodes.MethodNotAllowedError}`, (): void => {
+      const error = new MethodNotAllowedError('MethodNotAllowedError');
+      should(error.code).be.equal(ErrorCodes.MethodNotAllowedError);
     });
   });
 
-  describe('Misdirected Request Error', () => {
-    it(`should return ${ErrorCodes.MisdirectedRequestError}`, () => {
-      error = new MisdirectedRequestError('MisdirectedRequestError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.MisdirectedRequestError);
+  describe('Misdirected Request Error', (): void => {
+    it(`should return ${ErrorCodes.MisdirectedRequestError}`, (): void => {
+      const error = new MisdirectedRequestError('MisdirectedRequestError');
+      should(error.code).be.equal(ErrorCodes.MisdirectedRequestError);
     });
   });
 
-  describe('Not Acceptable Error', () => {
-    it(`should return ${ErrorCodes.NotAcceptableError}`, () => {
-      error = new NotAcceptableError('NotAcceptableError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.NotAcceptableError);
+  describe('Not Acceptable Error', (): void => {
+    it(`should return ${ErrorCodes.NotAcceptableError}`, (): void => {
+      const error = new NotAcceptableError('NotAcceptableError');
+      should(error.code).be.equal(ErrorCodes.NotAcceptableError);
     });
   });
 
-  describe('Not Found Error', () => {
-    it(`should return ${ErrorCodes.NotFoundError}`, () => {
-      error = new NotFoundError('NotFoundError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.NotFoundError);
+  describe('Not Found Error', (): void => {
+    it(`should return ${ErrorCodes.NotFoundError}`, (): void => {
+      const error = new NotFoundError('NotFoundError');
+      should(error.code).be.equal(ErrorCodes.NotFoundError);
     });
   });
 
-  describe('Payment Required Error', () => {
-    it(`should return ${ErrorCodes.PaymentRequiredError}`, () => {
-      error = new PaymentRequiredError('PaymentRequiredError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.PaymentRequiredError);
+  describe('Payment Required Error', (): void => {
+    it(`should return ${ErrorCodes.PaymentRequiredError}`, (): void => {
+      const error = new PaymentRequiredError('PaymentRequiredError');
+      should(error.code).be.equal(ErrorCodes.PaymentRequiredError);
     });
   });
 
-  describe('Policy Not Fulfilled Error', () => {
-    it(`should return ${ErrorCodes.PolicyNotFulfilledError}`, () => {
-      error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.PolicyNotFulfilledError);
+  describe('Policy Not Fulfilled Error', (): void => {
+    it(`should return ${ErrorCodes.PolicyNotFulfilledError}`, (): void => {
+      const error = new PolicyNotFulfilledError('PolicyNotFulfilledError');
+      should(error.code).be.equal(ErrorCodes.PolicyNotFulfilledError);
     });
   });
 
-  describe('Precondition Failed Error', () => {
-    it(`should return ${ErrorCodes.PreconditionFailedError}`, () => {
-      error = new PreconditionFailedError('PreconditionFailedError');
-      const result: number = error.code;
-      should(result).be.equal(ErrorCodes.PreconditionFailedError);
+  describe('Precondition Failed Error', (): void => {
+    it(`should return ${ErrorCodes.PreconditionFailedError}`, (): void => {
+      const error = new PreconditionFailedError('PreconditionFailedError');
+      should(error.code).be.equal(ErrorCodes.PreconditionFailedError);
     });
   });
 });
