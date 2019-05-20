@@ -1,42 +1,45 @@
-import {BadGatewayError, isError, isEssentialProjectsError, NotFoundError} from '../src/index';
-
 import 'mocha';
 import * as should from 'should';
 
-const badGatewayError: Error = <any> new BadGatewayError('test');
+import {
+  BadGatewayError,
+  NotFoundError,
+  isError,
+  isEssentialProjectsError,
+} from '../src/index';
 
-describe('isError()', () => {
-  describe('Bad Gateway Error true', () => {
-    it('should return true', () => {
-      const badGate: boolean = isError(badGatewayError, BadGatewayError);
-      const result: boolean = badGate;
-      should(result).be.equal(true);
+describe('isError()', (): void => {
+
+  describe('Bad Gateway Error true', (): void => {
+    it('should return true', (): void => {
+      const badGatewayError = new BadGatewayError('test');
+      const isBadGatewayError = isError(badGatewayError, BadGatewayError);
+      should(isBadGatewayError).be.equal(true);
     });
   });
 
-  describe('Bad Gateway Error false', () => {
-    it('should return false', () => {
-      const badGate: boolean = isError(badGatewayError, NotFoundError);
-      const result: boolean = badGate;
-      should(result).be.equal(false);
+  describe('Bad Gateway Error false', (): void => {
+    it('should return false', (): void => {
+      const badGatewayError = new BadGatewayError('test');
+      const isNotFoundFoundError = isError(badGatewayError, NotFoundError);
+      should(isNotFoundFoundError).be.equal(false);
     });
   });
 });
 
-describe('isEssentialsProjectsError()', () => {
-  describe('IsEssentialProjectsError true', () => {
-    it('should return true', () => {
-      const badGate: boolean = isEssentialProjectsError(badGatewayError);
-      const result: boolean = badGate;
-      should(result).be.equal(true);
+describe('isEssentialsProjectsError()', (): void => {
+  describe('IsEssentialProjectsError true', (): void => {
+    it('should return true', (): void => {
+      const badGatewayError = new BadGatewayError('test');
+      const isKnownError = isEssentialProjectsError(badGatewayError);
+      should(isKnownError).be.equal(true);
     });
   });
 
-  describe('IsEssentialProjectsError false', () => {
-    it('should return false', () => {
-      const falseError: boolean = isEssentialProjectsError('test');
-      const result: boolean = falseError;
-      should(result).be.equal(false);
+  describe('IsEssentialProjectsError false', (): void => {
+    it('should return false', (): void => {
+      const isKnownError = isEssentialProjectsError('test');
+      should(isKnownError).be.equal(false);
     });
   });
 });
