@@ -4,7 +4,7 @@ import * as errorClasses from './index';
 export class BaseError extends Error {
 
   protected _code: number;
-  protected _additionalInformation: string;
+  protected _additionalInformation: any;
 
   constructor(code: number, message: string) {
     super(message);
@@ -63,11 +63,11 @@ export class BaseError extends Error {
     return true;
   }
 
-  public get additionalInformation(): string {
+  public get additionalInformation(): any {
     return this._additionalInformation;
   }
 
-  public set additionalInformation(additionalInformation: string) {
+  public set additionalInformation(additionalInformation: any) {
     this._additionalInformation = additionalInformation;
   }
 
