@@ -3,12 +3,14 @@ import * as errorClasses from './index';
 
 export class BaseError extends Error {
 
-  protected _code: number;
-  protected _additionalInformation: any;
+  public code: number;
+  public additionalInformation: any;
+
+  public readonly isEssentialProjectsError = true;
 
   constructor(code: number, message: string) {
     super(message);
-    this._code = code;
+    this.code = code;
     this.name = this.constructor.name;
 
     // Currently, Firefox and Safari do not support the stack method.
@@ -53,22 +55,6 @@ export class BaseError extends Error {
     errorClass.additionalInformation = errorInfo.additionalInformation;
 
     return errorClass;
-  }
-
-  public get code(): number {
-    return this._code;
-  }
-
-  public get isEssentialProjectsError(): boolean {
-    return true;
-  }
-
-  public get additionalInformation(): any {
-    return this._additionalInformation;
-  }
-
-  public set additionalInformation(additionalInformation: any) {
-    this._additionalInformation = additionalInformation;
   }
 
   public serialize(): string {
