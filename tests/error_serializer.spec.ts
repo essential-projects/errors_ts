@@ -38,8 +38,25 @@ describe('Error Serializer', (): void => {
       const hasStack = serializedError.indexOf('"stack"') > -1;
 
       should(hasName).be.true('Failed to serialize the error\'s name!');
-      should(hasMessage).be.true('Failed to serialize the error\'s code!');
+      should(hasMessage).be.true('Failed to serialize the error\'s message!');
       should(hasStack).be.true('Failed to serialize the error\'s stack!');
+    });
+
+    it('Should successfully serialize a custom error', (): void => {
+      const testError = {
+        name: 'BpmnError',
+        code: 'xxx',
+        message: 'Hello World',
+      };
+      const serializedError = serializeError(testError);
+
+      const hasName = serializedError.indexOf('"name":"BpmnError"') > -1;
+      const hasMessage = serializedError.indexOf('"message":"Hello World"') > -1;
+      const hasCode = serializedError.indexOf('"code":"xxx"') > -1;
+
+      should(hasName).be.true('Failed to serialize the error\'s name!');
+      should(hasMessage).be.true('Failed to serialize the error\'s message!');
+      should(hasCode).be.true('Failed to serialize the error\'s code!');
     });
 
   });
@@ -70,7 +87,11 @@ describe('Error Serializer', (): void => {
 
     it('Should not crash when trying to deserialize customized, untyped errors', (): void => {
 
-      const testValue = {random: 1, property: 2};
+      const testValue = {
+        name: 'BpmnError',
+        code: 'xxx',
+        message: 'Hello World',
+      };
 
       const deserializedError = deserializeError(JSON.stringify(testValue));
 

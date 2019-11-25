@@ -7,19 +7,25 @@ interface ISerializedErrorFrame {
   stack: string;
 }
 
-export function serializeError(error: Error | BaseError): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function serializeError(error: Error | BaseError | any): string {
 
   if (isEssentialProjectsError(error)) {
     return error.serialize();
   }
 
-  const errorJson: ISerializedErrorFrame = {
-    message: error.message || '',
-    name: error.name || '',
-    stack: error.stack || '',
-  };
+  if (error instanceof Error) {
 
-  return JSON.stringify(errorJson);
+    const errorJson: ISerializedErrorFrame = {
+      message: error.message || '',
+      name: error.name || '',
+      stack: error.stack || '',
+    };
+
+    return JSON.stringify(errorJson);
+  }
+
+  return JSON.stringify(error);
 }
 
 export function deserializeError(stringifiedError: string): Error | BaseError {
@@ -48,6 +54,7 @@ function deserializeBasicError(stringifiedError: string): Error {
   return error;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function tryParse(value: string): ISerializedErrorFrame | any {
   try {
     const result = JSON.parse(value);
