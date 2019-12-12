@@ -46,7 +46,7 @@ There are two ways to serialize/deserialize the errors:
 
 **Serialization:**
 
-Each error has a `serialize` function which will create a string representation of the error object.
+Each error has a `serialize` function which creates a string representation of the error object.
 
 For example:
 
@@ -76,14 +76,14 @@ The function will throw an error, if the given string does not properly represen
 
 ### Serializer functions
 
-We also provide a global `serialize` and `deserialize` function, which works independently from any internal errors.
+We also provide a global `serialize` and `deserialize` function, which work independently from any internal errors.
 
 Unlike the serializer functions attached to `BaseError`, these functions are also able to handle base `Error` objects and even plain JSONs.
 
 Example:
 
 ```ts
-import {BaseError, deserializeError, serializeError} from '@essential-projects/errors_ts';
+import {deserializeError, InternalServerError, serializeError} from '@essential-projects/errors_ts';
 
 const internalServerError = new InternalServerError('error!');
 const basicError = new Error('error!');
