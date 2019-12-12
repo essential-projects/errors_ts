@@ -1,60 +1,120 @@
-# Errors_ts
+# errors_ts
 
 A technical error provider.
 
+The errors are based on HTTP, but can be used anywhere else as well.
+This is also the set of errors that the ProcessEngine uses internally.
+
 ## Usage
 
-1. If you build a transport layer, ...
+Installation:
 
-   ... you can implement the handling of the Technical Errors provided by this
-   package, so that when someone uses your layer, and an error ist thrown, you
-   can handle it correctly.
+```sh
+npm install --save @essential-projects/errors_ts
+```
 
-1. If you want to use essential-projects-errors, ...
+Usage in NodeJS:
 
-   ... you can just use the Errors provided by this package directly, or write your
-   own non-technical errors that extend these errors.
+```js
+const ERRORNAME = require('@essential-projects/errors_ts').ERRORNAME;
+// or
+const {ERRORNAME1, ERRORNAME2, ERRORNAME3} = require('@essential-projects/errors_ts');
 
-   Every library that can handle these errors will be able to also correctly handle
-   your extensions of these errors.
+const error = new ERRORNAME('fancy error message');
+```
 
-1. Either way...
+Usage in TypeScript:
 
-   ... you just need to install it with:
+```ts
+import * as Errors from '@essential-projects/errors_ts';
+// or
+import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors_ts';
 
-   ```bash
-   npm install --save @essential-projects/errors_ts
-   ```
+const error = new Errors.ERRORNAME('fancy error message');
+const anotherError = new ERRORNAME1('fancy error message');
+```
 
-   And then import the errors like this:
+Where `ERRORNAME` is the error you want to import.
 
-   ```js
-   // JavaScript-variant
-   const ERRORNAME = require('@essential-projects/errors_ts').ERRORNAME`
+All errors from this package have the `isEssentialProjectsError`-property, so that they can be easily recognized as such.
 
-   // typescript-variant
-   import {ERRORNAME1, ERRORNAME2, ERRORNAME3} from '@essential-projects/errors_ts';
-   ```
+## Serialization and Deserialization
 
-   Where `ERRORNAME` is the name error you want to import.
+There are two ways to serialize/deserialize the errors:
 
-   All essential-projects-errors have the `isEssentialProjectsError`-property, so they can be identified as such.
+### Direct serialization
 
-# Test
+**Serialization:**
 
-In order to run the test:
+Each error has a `serialize` function which will create a string representation of the error object.
+
+For example:
+
+```ts
+import {InternalServerError} from '@essential-projects/errors_ts';
+
+const error = new InternalServerError('error!');
+const serializedError = error.serialize();
+```
+
+**Deserialization:**
+
+The `BaseError` class provides a static `deserialize` function, which accepts a string argument.
+It tries to parse the string into a corresponding `EssentialProjects` error and returns the result.
+
+For example:
+
+```ts
+import {BaseError} from '@essential-projects/errors_ts';
+
+const serializedError = '{"errorClassName":"InternalServerError","code":500,"message":"Process was terminated!","callStack":"InternalServerError: Process was terminated!\n    at <InsertStackHere>"}';
+const error = BaseError.deserialize();
+```
+
+**Note:**
+The function will throw an error, if the given string does not properly represent an EssentialProjects error!
+
+### Serializer functions
+
+We also provide a global `serialize` and `deserialize` function, which works independently from any internal errors.
+
+Unlike the serializer functions attached to `BaseError`, these functions are also able to handle base `Error` objects and even plain JSONs.
+
+Example:
+
+```ts
+import {BaseError, deserializeError, serializeError} from '@essential-projects/errors_ts';
+
+const internalServerError = new InternalServerError('error!');
+const basicError = new Error('error!');
+const untypedError = {message: 'Oh no, where did my type info go!?', code: 666};
+
+// Serializing errors
+const serializedInternalServerError = serializeError(internalServerError);
+const serializedBasicError = serializeError(basicError);
+const serializedUntypedError = serializeError(untypedError);
+
+// Deserializing errors
+// The results should match the errors declared above
+const deserializedInternalServerError = deserializeError(serializedInternalServerError);
+const deserializedBasicError = deserializeError(serializedBasicError);
+const deserializedUntypedError = deserializeError(serializedUntypedError);
+```
+
+Use these, if you cannot be entirely certain that an error will be from `@essential-projects/errors_ts`.
+
+## Test
+
+You can run the tests by simply calling:
 
 ```bash
 npm test
 ```
 
-# Errors
+## Error Codes
 
-The Errors are mostly based on
-[http-status-codes](https://de.wikipedia.org/wiki/HTTP-Statuscode).
-Every Error, except for the `BaseError` directly extends `BaseError`, and
-`BaseError` extends `Error`
-
+The Errors are mostly based on [HTTP status codes](https://de.wikipedia.org/wiki/HTTP-Statuscode).
+Every Error, except for the `BaseError` extends `BaseError`, which in turn extends `Error`.
 
 | Name                               | Code    |
 | ---                                | ---     |
